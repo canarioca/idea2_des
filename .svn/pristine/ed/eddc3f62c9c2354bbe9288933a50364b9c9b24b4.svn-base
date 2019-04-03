@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:jenia="http://www.jenia.org/jsf/popup"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:s="http://myfaces.apache.org/sandbox">
+	
+		<h:form id="formRehabilitador">
+			<t:fieldset>
+				<h:panelGrid columns="2" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop" id="gridRehabilitador1">
+					<h:panelGrid columns="2" >
+						<h:outputLabel value="#{ms.general_fecha}" style="font-weight: bold;" />
+						<br />
+						<h:panelGrid columns="4" style="border-top: solid 1px;border-color: black;">
+							<rich:calendar  datePattern="dd/MM/yyyy HH:mm" inputSize="15"
+											showWeeksBar="false" direction="bottom-left"
+											value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.fechaRehabilitador}" id="fechaRehabilitador" />
+							<h:selectBooleanCheckbox value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.sedentarismo}" id="sedentarismo" />
+							<h:outputLabel value="#{ms.reacar_txt_sedentarismo}" />
+						</h:panelGrid>
+						<br />
+					</h:panelGrid>
+				</h:panelGrid>
+				
+				<h:panelGrid columns="5" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop" id="gridRehabilitador2">
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_nivelEjercicio}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.nivelEjercicio}" id="nivelEjercicio"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_horasEjercicio}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.horasEjercicio}" id="horasEjercicio" />																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_FVC}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.parametroFVC}" id="parametroFVC"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_FEVI1}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.parametroFEVI}" id="parametroFEVI"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_FEVI1_FVC}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.ansiedadFEVIFVC}" id="ansiedadFEVIFVC"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+				</h:panelGrid>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_problemasArticulares}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.problemasArticulares}" id="problemasArticulares"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_no}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_problemasLeves}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_problemasProtocolo}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_problemasCognitivos}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.problemasCognitivos}" id="problemasCognitivos"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_no}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_problemasLeves}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_problemasAyuda}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_problemasSensoriales}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.problemasSensoriales}" id="problemasSensoriales"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_no}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_problemasLeves}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_problemasAyuda}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_nivelEducativoSanitario}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.rehabilitadorDTO.nivelEducativoSanitario}" id="nivelEducativoSanitario"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_noSabe}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_tieneConocimiento}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_nivelElevado}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+			</t:fieldset>
+		</h:form>
+</ui:composition>

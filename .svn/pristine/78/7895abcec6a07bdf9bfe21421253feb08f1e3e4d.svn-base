@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:jenia="http://www.jenia.org/jsf/popup"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:s="http://myfaces.apache.org/sandbox" template="/pl/plBase.jsp">
+
+	<ui:define name="contenido">
+		<h:form id="formRehabilitacionCardiaca">
+		
+		
+		
+		
+		             
+		
+		
+			<a4j:poll reRender="cabpaci" interval="120000"/>
+			<h:panelGrid cellpadding="0" cellspacing="0" columns="1" width="98%"
+				style="margin-top: 15px;" id="panelRehabilitacionCardiaca">
+				<rich:messages errorClass="hvn_msjError" infoClass="hvn_msjInfo" warnClass="hvn_msjAviso" />
+				<rich:panel style="background-color: #ffffff;  background-repeat: no-repeat; background-position:right bottom;">
+					
+					<f:facet name="header">
+                     	<h:panelGrid columns="7" width="65%" columnClasses="left,right"
+							cellpadding="0" cellspacing="0" id="panicosegclin">
+							<h:outputLabel value="#{ms.menu_pr_msg_rehabilitacion_cardiaca}" style="color: white;" />
+	                 		<a4j:commandLink style="text-align: right;" reRender="panSeguimientoClinicos,tablaPacientesBdu,panicosegclin,panNuevaComplicacionPacSegClin" 
+	                 			onclick="if (!confirm('#{ms.warn_guarda}')) return false;javascript:Richfaces.showModalPanel('episodios');" 
+	                 			actionListener="#{controlSeguimientosClinicos.preguarda}" rendered="#{controlSeguimientosClinicos.proc.idepisodio eq null }">
+								<h:graphicImage url="/img/iconos/guardar.png" style="border:0px;" title="#{ms.guardar}"/>
+							</a4j:commandLink>                 		
+							<a4j:commandLink style="text-align: right;" reRender="panSeguimientoClinicos,panicosegclin,panNuevaComplicacionPacSegClin"
+								onclick="if (!confirm('#{ms.warn_guarda}')) return false;javascript:Richfaces.showModalPanel('buscando');"
+								oncomplete="javascript:Richfaces.hideModalPanel('buscando');"
+								actionListener="#{controlSeguimientosClinicos.guarda}" rendered="#{controlSeguimientosClinicos.proc.idepisodio ne null and controlSeguimientosClinicos.editable }">
+								<h:graphicImage url="/img/iconos/guardar.png" style="border:0px;" title="#{ms.guardar}" />
+							</a4j:commandLink>
+							<a4j:commandLink style="text-align: right;" reRender="panSeguimientoClinicos"
+									onclick="if (!confirm('#{ms.warn_borra}')) return false;javascript:Richfaces.showModalPanel('buscando');"
+									oncomplete="javascript:Richfaces.hideModalPanel('buscando');"
+									actionListener="#{controlSeguimientosClinicos.eliminar }" action="menuprincipal"
+									rendered="#{controlSeguimientosClinicos.seg.idsegclin ne null and loginForm.acceso.privs.borrado eq 1}">
+									<h:graphicImage url="/img/iconos/borra.png" style="border:0px;" width="24" height="24"
+										title="#{ms.eliminar }" />
+							</a4j:commandLink>
+							<h:commandLink actionListener="#{controlSeguimientosClinicos.imprimeInforme}"
+								rendered="#{controlSeguimientosClinicos.seg.idsegclin ne null}" target="_blank">
+								<h:graphicImage value="/img/iconos/informe_especial.png"
+									width="22" height="22" style="border:none;" title="#{ms.imprimir_informe }" />
+							</h:commandLink>														
+						</h:panelGrid>
+                     </f:facet>
+					
+					
+					<h:panelGrid width="90%" columnClasses="centerTop">		
+						<rich:tabPanel contentClass="estiloFondo" switchType="client" id="tabRehabilitacionCardiaca">						
+							<rich:tab label="#{ms.reacar_tab_rehabilitador_title}" rendered="#{loginForm.accmods.implante eq 1 and true}">
+								<h:panelGrid id="panelGridRehabilitador" width="100%">
+									<a4j:include viewId="/ventanas/rehabilitacionCardiaca/rehabilitador.jsp" />
+								</h:panelGrid>
+							</rich:tab>
+							<rich:tab label="#{ms.reacar_tab_psicologa_title}" rendered="#{loginForm.accmods.implante eq 1 and true}">
+								<h:panelGrid id="panelGridPsicologa" width="100%">
+									<a4j:include viewId="/ventanas/rehabilitacionCardiaca/psicologa.jsp" />
+								</h:panelGrid>
+							</rich:tab>
+							<rich:tab label="#{ms.reacar_tab_nutricionista_title}" rendered="#{loginForm.accmods.eef eq 1}">
+								<h:panelGrid id="panelGridNutricionista" width="100%">
+									<a4j:include viewId="/ventanas/rehabilitacionCardiaca/nutricionista.jsp" />
+								</h:panelGrid>
+							</rich:tab>
+						</rich:tabPanel>
+					</h:panelGrid>
+					<rich:spacer height="30px"/>				
+				</rich:panel>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

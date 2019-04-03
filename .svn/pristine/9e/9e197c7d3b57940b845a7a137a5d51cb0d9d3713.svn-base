@@ -1,0 +1,26 @@
+/****************** ESTILOS Y CSS *********************/
+
+Uno de los puntos de la accesibilidad es usar hojas de estilos.
+En cardioarritmias tenemos varias hojas de estilos colgando de la carpeta css:
+	* keyboard.css. Estilo para los teclados virtuales
+	* iniciocss.css. Estilos propios de hvn, de cardioarritmias y varios
+	* redmond/redmond.css. Estilo que usamos para los componentes primefaces y richfaces
+	
+Los componentes de primefaces o richfaces que pongamos y no sigan el estilo del proyecto, 
+tendremos que definirselo en redmond.css sobreescribiendo la clase genérica, por ejemplo:
+	.rich-table{
+		border: 1px solid #a6c9e2;
+		background-color: #fdfefe;
+	}
+sobreescribe el estilo de las rich:dataTable.
+
+Al igual que para este componente, para cualquier otro también podemos buscar el nombre de la
+clase genérica y sobreescribirla. De este modo nos evitamos poner styleClass="nombreCss" y lo
+coge automáticamente.
+
+Para ver el nombre de las clases dss podéis hacerlo viendo el código fuente de la página y 
+buscando el componente podemos ver los estilos que usa.
+
+Si tenéis problemas, me preguntáis.
+
+Moisés Fanchi Aguado

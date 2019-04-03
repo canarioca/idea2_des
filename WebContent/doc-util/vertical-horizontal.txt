@@ -1,0 +1,5 @@
+/****************** DISEÑO HORIZONTAL Y VERTICAL *****************/
+
+Para la elección de un diseño de página con menú horizontal y vertical:
+	- Cambiar el template usado (/pl/plBase.jsp o /pl/plBaseh.jsp)
+	- Dependiendo del diseño usado, coge un menú de /pl/inc/ (menuv.jsp o menuh.jsp)

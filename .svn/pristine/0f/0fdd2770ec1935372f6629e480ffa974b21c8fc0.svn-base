@@ -1,0 +1,13 @@
+#####################################################
+################## LDAP #############################
+#####################################################
+aut.ldap.activo=true
+aut.ldap.initial.context.factory=com.sun.jndi.ldap.LdapCtxFactory
+#aut.ldap.provider.url=ldap://ldap.forumsys.com:389/
+#aut.ldap.provider.url=ldap://ldap.testathon.net:389/
+aut.ldap.provider.url=ldap://10.100.6.60:389/DC=osakidetza,DC=svs,DC=local
+aut.ldap.security.authentication=simple
+aut.ldap.usuario.dominio=osakidetza.svs.local
+#aut.ldap.nombre=OU=HVN,DC=huvn,DC=diraya,DC=sspa,DC=junta-andalucia,DC=es
+#aut.ldap.nombre=ou=mathematicians,dc=example,dc=com
+aut.ldap.nombre=CN=OSID INFORMATIKA ARRHYTNET,OU=OU-30-USR-2.ESTANDAR,OU=OU-30-USR-OSI DONOSTIALDEA,OU=OU-30-OSI DONOSTIALDEA,DC=osakidetza,DC=svs,DC=local

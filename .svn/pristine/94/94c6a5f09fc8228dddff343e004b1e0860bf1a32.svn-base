@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:jenia="http://www.jenia.org/jsf/popup"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:s="http://myfaces.apache.org/sandbox"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+		<h:form id="formPsicologa">
+			<t:fieldset>
+				<h:panelGrid columns="2" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop">
+					<h:panelGrid columns="2" >
+						<h:outputLabel value="#{ms.general_fecha}" style="font-weight: bold;" />
+						<br />
+						<h:panelGrid columns="2" style="border-top: solid 1px;border-color: black;">
+							<rich:calendar  datePattern="dd/MM/yyyy HH:mm" inputSize="15"
+											showWeeksBar="false" direction="bottom-left"
+											value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.fechaPsicologa}" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:panelGrid>
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_estadoCivil}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.estadoCivil}" id="estadoCivil"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_casado}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_soltero}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_viudo}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_separado}" />
+					   <f:selectItem itemValue = "5" itemLabel = "#{ms.reacar_radio_divorciado}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<h:panelGrid>
+					<h:outputLabel value="#{ms.reacar_txt_profesion}" style="font-weight: bold;" />
+					<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+						<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.profesion}" id="profesion"/>																
+					</h:panelGrid>	
+				</h:panelGrid>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_nivelEstudios}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.nivelEstudios}" id="nivelEstudios"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_primaria}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_secundaria}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_bachillerato}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_licenciado}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_situacionLaboral}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.situacionLaboral}" id="situacionLaboral"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_activo}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_baja}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_jubilado}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_prejubilado}" /> 
+					   <f:selectItem itemValue = "5" itemLabel = "#{ms.reacar_radio_incapacidad}" />
+					   <f:selectItem itemValue = "6" itemLabel = "#{ms.reacar_radio_desempleado}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_situacionEconomica}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.situacionEconomica}" id="situacionEconomica"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_buena}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_aceptable}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_dificultades}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_mala}" />
+					   <f:selectItem itemValue = "5" itemLabel = "#{ms.reacar_radio_pobre}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_calidadSueno}">
+					<h:selectManyCheckbox id="idSelectManyCheckbox"  value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.selectedsValuesCheckbox}" >
+					   <f:selectItems value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.selectItemsCheck}"/>
+					</h:selectManyCheckbox>
+					<ice:dataTable varStatus="rowVar" value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.calidadSueno}" var="anyNameVar">
+					   <ice:column>
+					      <ice:checkbox for="idSelectManyCheckbox" index="#{anyNameVar.id}" />
+					     
+					   </ice:column>
+					   <ice:column>
+					      <h:outputText value="#{anyNameVar.tipo}" />
+					   </ice:column>
+					</ice:dataTable>
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_antecedentesPsiquiatricos}">
+					
+					<h:selectBooleanCheckbox value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.antecedentesPsiquiatricosPersonales}" id="antecedentesPsiquiatricosPersonales" />
+					<h:outputLabel value="#{ms.reacar_check_Personales}" />
+					
+					<br /><br />							
+					
+					<h:outputLabel value="#{ms.reacar_txt_diagnostico}" style="font-weight: bold;" />
+					<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.antecedentesPsiquiatricosPersonalesDiagnostico}" id="antecedentesPsiquiatricosPersonalesDiagnostico" />																
+					
+					<br /><br />
+					
+					<h:selectBooleanCheckbox value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.antecedentesPsiquiatricosFamiliares}" id="antecedentesPsiquiatricosFamiliares" />
+					<h:outputLabel value="#{ms.reacar_check_Familiares}" />
+					
+					<br /><br />
+					
+					<h:panelGrid columns="4" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop" id="gridAntecedentesPsiquiatricos">
+						<h:outputLabel value="#{ms.reacar_txt_diagnostico}" style="font-weight: bold;" />
+						<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.antecedentesPsiquiatricosFamiliaresDiagnostico}" id="antecedentesPsiquiatricosFamiliaresDiagnostico"/>																
+						<h:outputLabel value="#{ms.reacar_txt_gradoFilacion}" style="font-weight: bold;" />
+						<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.antecedentesPsiquiatricosFamiliaresGrado}" id="antecedentesPsiquiatricosFamiliaresGrado"/>																
+					</h:panelGrid>
+					
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_apoyoSocial}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.apoyoSocial}" id="apoyoSocial"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_inexistente}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_bajo}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_optimo}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_alto}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<h:panelGrid>
+					<h:outputLabel value="#{ms.reacar_txt_numHijos}" style="font-weight: bold;" />
+					<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.numHijos}" id="numHijos"/>																
+				</h:panelGrid>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_familia}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.familia}" id="familia"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_nucleoFamiliar}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_familiaExtensa}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_nivelIrratibilidad}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.nivelIrritabilidad}" id="nivelIrritabilidad"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_nada}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_poco}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_moderado}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_mucho}" />
+					   <f:selectItem itemValue = "5" itemLabel = "#{ms.reacar_radio_extremo}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_nivelSatisfaccion}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.nivelSatisfaccion}" id="nivelSatisfaccion"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_bajo}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_medio}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_alto}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset legend ="#{ms.reacar_fieldset_vidaSexual}">
+					<h:selectOneRadio value = "#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.vidaSexual}" id="vidaSexual"> 
+					   <f:selectItem itemValue = "1" itemLabel = "#{ms.reacar_radio_impotencia}" /> 
+					   <f:selectItem itemValue = "2" itemLabel = "#{ms.reacar_radio_disminucionSexual}" />
+					   <f:selectItem itemValue = "3" itemLabel = "#{ms.reacar_radio_decrementoSexual}" />
+					   <f:selectItem itemValue = "4" itemLabel = "#{ms.reacar_radio_anorgasmica}" />
+					</h:selectOneRadio>    
+				</t:fieldset>
+				
+				<br />
+				
+				<t:fieldset>
+					<h:panelGrid columns="4" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop">
+							<h:panelGrid>
+								<h:outputLabel value="#{ms.reacar_txt_depresionDBI_II}" style="font-weight: bold;" />
+								<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+									<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.depresionDBI}" id="depresionDBI"/>																
+								</h:panelGrid>	
+							</h:panelGrid>
+							<h:panelGrid>
+								<h:outputLabel value="#{ms.reacar_txt_ansiedadSTAI}" style="font-weight: bold;" />
+								<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+									<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.ansiedadSTAI}" id="ansiedadSTAI"/>																
+								</h:panelGrid>	
+							</h:panelGrid>
+							<h:panelGrid>
+								<h:outputLabel value="#{ms.reacar_txt_ansiedadAE}" style="font-weight: bold;" />
+								<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+									<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.ansiedadAE}" id="ansiedadAE"/>																
+								</h:panelGrid>	
+							</h:panelGrid>
+							<h:panelGrid>
+								<h:outputLabel value="#{ms.reacar_txt_ansiedadAR}" style="font-weight: bold;" />
+								<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+									<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.ansiedadAR}" id="ansiedadAR"/>																
+								</h:panelGrid>	
+							</h:panelGrid>
+						</h:panelGrid>
+						
+						<br />
+						
+						<t:fieldset legend ="#{ms.reacar_fieldset_estiloAfrontamiento}">
+							<h:panelGrid columns="4" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop">
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_FSP}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoFSP}" id="afrontamientoFSP"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_AFN}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoAFN}" id="afrontamientoAFN"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_REP}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoREP}" id="afrontamientoREP"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_EEA}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoEEA}" id="afrontamientoEEA"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_EVI}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoEVI}" id="afrontamientoEVI"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_BAS}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoBAS}" id="afrontamientoBAS"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+								<h:panelGrid>
+									<h:outputLabel value="#{ms.reacar_txt_RLG}" style="font-weight: bold;" />
+									<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+										<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.psicologaDTO.afrontamientoRLG}" id="afrontamientoRLG"/>																
+									</h:panelGrid>	
+								</h:panelGrid>
+							</h:panelGrid>
+						</t:fieldset>
+				</t:fieldset>
+			</t:fieldset>
+		</h:form>
+</ui:composition>

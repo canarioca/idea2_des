@@ -1,0 +1,15 @@
+package com.sorin.idea.servicios;
+
+import java.util.List;
+
+import com.sorin.idea.dto.RcPsicoRelacionSueno;
+
+public interface ServicioRCPsicoRelacionSueno {
+
+	/**
+	 * Metodo que obtiene los valores de la tabla relacion sueño para un id de psicologia
+	 * 
+	 * @return
+	 */
+	public List<RcPsicoRelacionSueno> obtenerRelacionSueno( long psico );
+}

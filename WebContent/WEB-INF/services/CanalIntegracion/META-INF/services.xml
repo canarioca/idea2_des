@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.4.1 Built on : Aug 13, 2008 (05:03:35 
+	LKT) -->
+<serviceGroup>
+	<service name="CanalIntegracion"><!--class="spring.SpringInit">-->
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/ns/wsdl/in-out"
+				class="com.sorin.idea.integracion.canal.CanalIntegracionMessageReceiverInOut" />
+		</messageReceivers>
+		<parameter name="ServiceClass">com.sorin.idea.integracion.canal.CanalIntegracionSkeleton
+		</parameter>
+		<parameter name="useOriginalwsdl">true</parameter>
+		<parameter name="modifyUserWSDLPortAddress">true</parameter>
+		<operation name="insertarPaciente" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarPaciente</actionMapping>
+			<outputActionMapping>urn:insertarPaciente</outputActionMapping>
+		</operation>
+		<operation name="insertarCV" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarCV</actionMapping>
+			<outputActionMapping>urn:insertarCV</outputActionMapping>
+		</operation>
+		<operation name="insertarEF" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarEF</actionMapping>
+			<outputActionMapping>urn:insertarEF</outputActionMapping>
+		</operation>
+		<operation name="insertarImplante" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarImplante</actionMapping>
+			<outputActionMapping>urn:insertarImplante</outputActionMapping>
+		</operation>
+		<operation name="insertarSeguimiento" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarSeguimiento</actionMapping>
+			<outputActionMapping>urn:insertarSeguimiento</outputActionMapping>
+		</operation>
+		<operation name="insertarMesa" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarMesa</actionMapping>
+			<outputActionMapping>urn:insertarMesa</outputActionMapping>
+		</operation>
+		<operation name="insertarRegistrador" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarRegistrador</actionMapping>
+			<outputActionMapping>urn:insertarRegistrador</outputActionMapping>
+		</operation>
+		<operation name="insertarTestATP" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarTestATP</actionMapping>
+			<outputActionMapping>urn:insertarTestATP</outputActionMapping>
+		</operation>
+		<operation name="insertarTestFle" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarTestFle</actionMapping>
+			<outputActionMapping>urn:insertarTestFle</outputActionMapping>
+		</operation>
+		<operation name="insertarTestEpi" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion/canal">
+			<actionMapping>urn:insertarTestEpi</actionMapping>
+			<outputActionMapping>urn:insertarTestEpi</outputActionMapping>
+		</operation>
+	</service>
+</serviceGroup>

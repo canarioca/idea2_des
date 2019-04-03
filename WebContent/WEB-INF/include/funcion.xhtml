@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:component>
+	<a4j:jsFunction name="fn" oncomplete="#{identificaId.ventana}">
+		<a4j:actionparam name="tipotecla" assignTo="#{identificaId.tipotecla}" />
+		<a4j:actionparam name="identificador"
+			assignTo="#{identificaId.controlId}" />
+		<a4j:actionparam name="formulario"
+			assignTo="#{identificaId.formularioId}"
+			actionListener="#{identificaId.control}" />
+	</a4j:jsFunction>
+</ui:component>
+
+</html>

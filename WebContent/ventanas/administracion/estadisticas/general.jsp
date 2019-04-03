@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:jsflot="http://www.jsflot.org/taglib/jsflot"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:panelGrid columns="2">
+		<h:panelGrid>
+			<h:outputLabel value="#{ms.est_basic_fechas_title }" style="font-weight: bold;" />					
+			<h:panelGrid style="border-top: solid 1px;border-color: black;" width="100%">
+				<h:panelGrid columns="4" cellspacing="0">
+					<h:outputLabel value="#{ms.est_basic_fecha_desde }"/>
+					<rich:calendar datePattern="dd/MM/yyyy" inputSize="12"
+						showWeeksBar="false" direction="bottom-left"
+						value="#{controlEstadisticas.fechaini_gen }">
+					</rich:calendar>
+					<h:outputLabel value="#{ms.est_basic_fecha_hasta }"/>
+					<rich:calendar datePattern="dd/MM/yyyy" inputSize="12"
+						showWeeksBar="false" direction="bottom-left"
+						value="#{controlEstadisticas.fechafin_gen }">
+					</rich:calendar>
+				</h:panelGrid>
+			</h:panelGrid>	
+		</h:panelGrid>
+		<h:panelGrid>
+			<a4j:commandLink style="text-align: right;" reRender="panResultadosEstadisticasGenerales"
+				actionListener="#{controlEstadisticas.generarEstadisticasGenerales}"
+				onclick="javascript:Richfaces.showModalPanel('buscando');"
+				oncomplete="javascript:Richfaces.hideModalPanel('buscando');">
+				<h:graphicImage url="/img/iconos/ParameterReview.png" style="border:0px;"
+					title="#{ms.est_basic_generar_title }" width="24" height="24"/>
+			</a4j:commandLink>
+		</h:panelGrid>
+	</h:panelGrid>
+	<h:panelGrid id="panResultadosEstadisticasGenerales" columns="2" width="100%" columnClasses="alignTop,alignTop">
+		<h:panelGrid rendered="#{controlEstadisticas.est_gen eq true }" width="100%">
+			<h:panelGrid width="100%" columns="2" columnClasses="alignTop,alignTop">
+				<t:dataTable value="#{controlEstadisticas.genprocs}" var="proc" width="90%"
+					binding="#{controlEstadisticas.bindingGenProcs}" styleClass="hor-minimalist-b">
+		            <f:facet name="header">
+		                <a4j:commandLink style="text-align: right;" reRender="graficasEstadisticasGeneral"
+							>
+							<h:outputText value="#{ms.est_basic_tab_gen_total }: #{controlEstadisticas.resgen1 })"></h:outputText>		        
+							<h:graphicImage url="/img/iconos/icono_estadisticas.png" style="border:0px;"
+							title="#{ms.est_basic_grafica_title}" width="24" height="24"/>
+						</a4j:commandLink>
+		            </f:facet>	            
+		            <t:column width="50%" headerstyleClass="left">
+						<f:facet name="header">
+							<h:outputText value="#{ms.est_basic_tab_gen_proc }" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="alignTop">								
+							<h:outputLabel value="#{proc.tipo }"/>
+						</h:panelGrid>
+					</t:column>	
+					<t:column width="20%" headerstyleClass="left">
+						<f:facet name="header">
+							<h:outputText value="#{ms.est_basic_numero }" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="right" width="100%">								
+							<h:outputLabel value="#{proc.numero }"/>
+						</h:panelGrid>
+					</t:column>
+					<t:column width="20%" headerstyleClass="right">
+						<f:facet name="header">
+							<h:outputText value="%" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="right" width="100%">								
+							<h:outputLabel value="#{proc.porcentaje }"/>
+						</h:panelGrid>
+					</t:column>            
+		        </t:dataTable>
+		        <h:panelGrid>
+		        	<jsflot:flotChart id="chartGeneralProc"
+				        value="#{controlEstadisticas.chartSeriesGenProc}"
+				        actionListener="#{controlEstadisticas.chartActionListener}"
+				        testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+				        chartDraggable="true"
+				        chartClickable="true"
+				        chartZoomable="#{controlEstadisticas.chartDataGenProc.chartZoomable}"
+				        reRender="clickedPanel"
+				        showLines="false"
+				        fillLines="#{controlEstadisticas.chartDataGenProc.fillLines}"
+				        showDataPoints="#{controlEstadisticas.chartDataGenProc.showDataPoints}"
+				        legendColumns="#{controlEstadisticas.chartDataGenProc.legendColumns}"
+				        legendOpacity="#{controlEstadisticas.chartDataGenProc.legendOpacity}"
+				        legendPosition="#{controlEstadisticas.chartDataGenProc.legendPosition}"
+				        legendColor="#{controlEstadisticas.chartDataGenProc.legendColor}"
+				        height="#{controlEstadisticas.chartDataGenProc.height}"
+				        width="#{controlEstadisticas.chartDataGenProc.width}"
+				        showTooltip="#{controlEstadisticas.chartDataGenProc.showTooltip}"
+				        tooltipPosition="#{controlEstadisticas.chartDataGenProc.tooltipPosition}"
+				        tooltipFollowMouse="#{controlEstadisticas.chartDataGenProc.tooltipFollowMouse}"
+				        mode="#{controlEstadisticas.chartDataGenProc.mode}"
+				        timeFormat="#{controlEstadisticas.chartDataGenProc.timeFormat}"
+				        title="#{controlEstadisticas.chartDataGenProc.title}"
+				        subtitle="#{controlEstadisticas.chartDataGenProc.subtitle}"
+				        chartType="pie"
+				        showXaxisLabels="false"
+				        xaxisTitle="#{controlEstadisticas.chartDataGenProc.xaxisTitle}"
+				        xaxisTitleRotation="#{controlEstadisticas.chartDataGenProc.xaxisTitleRotation}"
+				        xaxisLabelRotation="#{controlEstadisticas.chartDataGenProc.xaxisLabelRotation}"
+				        showYaxisLabels="false"
+				        yaxisTitle="#{controlEstadisticas.chartDataGenProc.yaxisTitle}"
+				        yaxisTitleRotation="#{controlEstadisticas.chartDataGenProc.yaxisTitleRotation}"
+				        yaxisLabelRotation="#{controlEstadisticas.chartDataGenProc.yaxisLabelRotation}"
+				        numberOfXAxisTicks="#{controlEstadisticas.chartDataGenProc.numberOfXAxisTicks}"
+				        xaxisMinValue="#{controlEstadisticas.chartDataGenProc.xaxisMinValue}"
+				        xaxisMaxValue="#{controlEstadisticas.chartDataGenProc.xaxisMaxValue}"
+				        numberOfYAxisTicks="#{controlEstadisticas.chartDataGenProc.numberOfYAxisTicks}"
+				        yaxisMinValue="#{controlEstadisticas.chartDataGenProc.yaxisMinValue}"
+				        markers="#{controlEstadisticas.chartDataGenProc.markers}"
+				        markerPosition="#{controlEstadisticas.chartDataGenProc.markerPosition}"
+				        yaxisMaxValue="#{controlEstadisticas.chartDataGenProc.yaxisMaxValue}"
+				        crosshair="#{controlEstadisticas.chartDataGenProc.crosshair}">
+				    </jsflot:flotChart>
+		        </h:panelGrid>
+		        <t:dataTable value="#{controlEstadisticas.gensegsrem}" var="proc" width="90%" 
+		                  rendered="#{controlPacientes.booleanPrimoImplante == true or 
+				             controlPacientes.booleanReintervencion == true or 
+				             controlPacientes.booleanRecambioDispositivo == true or 
+				             controlPacientes.booleanUpgradeDispositivo == true or 
+				             controlPacientes.booleanRecolocacionGenerador == true or 
+				             controlPacientes.booleanRecolocacionElectrodo == true or 
+				             controlPacientes.booleanReimplante == true}"
+					binding="#{controlEstadisticas.bindingGenSegsRem}" styleClass="hor-minimalist-b">
+		            <f:facet name="header">		                
+		                <a4j:commandLink style="text-align: right;" reRender="graficasEstadisticasGeneral"
+		                	>
+							<h:outputText value="#{ms.est_basic_tab_gen_total_segs }: #{controlEstadisticas.resgen4 })"></h:outputText>		        
+							<h:graphicImage url="/img/iconos/icono_estadisticas.png" style="border:0px;"
+							title="#{ms.est_basic_grafica_title}" width="24" height="24"/>
+						</a4j:commandLink>
+		            </f:facet>	            
+		            <t:column width="50%" headerstyleClass="left">
+						<f:facet name="header">
+							<h:outputText value="#{ms.est_basic_tab_gen_tipo_seg }" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="alignTop">								
+							<h:outputLabel value="#{proc.tipo }"/>
+						</h:panelGrid>
+					</t:column>	
+					<t:column width="20%" headerstyleClass="left">
+						<f:facet name="header">
+							<h:outputText value="#{ms.est_basic_numero }" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="right" width="100%">								
+							<h:outputLabel value="#{proc.numero }"/>
+						</h:panelGrid>
+					</t:column>
+					<t:column width="20%" headerstyleClass="right">
+						<f:facet name="header">
+							<h:outputText value="%" />
+						</f:facet>
+						<h:panelGrid columns="2" columnClasses="right" width="100%">								
+							<h:outputLabel value="#{proc.porcentaje }"/>
+						</h:panelGrid>
+					</t:column>            
+		        </t:dataTable>
+		        <h:panelGrid>
+				    <jsflot:flotChart id="chartGeneralSegs" rendered="#{controlPacientes.booleanPrimoImplante == true or 
+															             controlPacientes.booleanReintervencion == true or 
+															             controlPacientes.booleanRecambioDispositivo == true or 
+															             controlPacientes.booleanUpgradeDispositivo == true or 
+															             controlPacientes.booleanRecolocacionGenerador == true or 
+															             controlPacientes.booleanRecolocacionElectrodo == true or 
+															             controlPacientes.booleanReimplante == true}"
+						value="#{controlEstadisticas.chartSeriesGenSegs}"
+						actionListener="#{controlEstadisticas.chartActionListener}"
+						testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+						        chartDraggable="true"
+						        chartClickable="true"
+						        chartZoomable="#{controlEstadisticas.chartDataGenSegs.chartZoomable}"
+						        reRender="clickedPanel"
+						        showLines="false"
+						        fillLines="#{controlEstadisticas.chartDataGenSegs.fillLines}"
+						        showDataPoints="#{controlEstadisticas.chartDataGenSegs.showDataPoints}"
+						        legendColumns="#{controlEstadisticas.chartDataGenSegs.legendColumns}"
+						        legendOpacity="#{controlEstadisticas.chartDataGenSegs.legendOpacity}"
+						        legendPosition="#{controlEstadisticas.chartDataGenSegs.legendPosition}"
+						        legendColor="#{controlEstadisticas.chartDataGenSegs.legendColor}"
+						        height="#{controlEstadisticas.chartDataGenSegs.height}"
+						        width="#{controlEstadisticas.chartDataGenSegs.width}"
+						        showTooltip="#{controlEstadisticas.chartDataGenSegs.showTooltip}"
+						        tooltipPosition="#{controlEstadisticas.chartDataGenSegs.tooltipPosition}"
+						        tooltipFollowMouse="#{controlEstadisticas.chartDataGenSegs.tooltipFollowMouse}"
+						        mode="#{controlEstadisticas.chartDataGenSegs.mode}"
+						        timeFormat="#{controlEstadisticas.chartDataGenSegs.timeFormat}"
+						        title="#{controlEstadisticas.chartDataGenSegs.title}"
+						        subtitle="#{controlEstadisticas.chartDataGenSegs.subtitle}"
+						        chartType="pie"
+						        showXaxisLabels="false"
+						        xaxisTitle="#{controlEstadisticas.chartDataGenSegs.xaxisTitle}"
+						        xaxisTitleRotation="#{controlEstadisticas.chartDataGenSegs.xaxisTitleRotation}"
+						        xaxisLabelRotation="#{controlEstadisticas.chartDataGenSegs.xaxisLabelRotation}"
+						        showYaxisLabels="false"
+						        yaxisTitle="#{controlEstadisticas.chartDataGenSegs.yaxisTitle}"
+						        yaxisTitleRotation="#{controlEstadisticas.chartDataGenSegs.yaxisTitleRotation}"
+						        yaxisLabelRotation="#{controlEstadisticas.chartDataGenSegs.yaxisLabelRotation}"
+						        numberOfXAxisTicks="#{controlEstadisticas.chartDataGenSegs.numberOfXAxisTicks}"
+						        xaxisMinValue="#{controlEstadisticas.chartDataGenSegs.xaxisMinValue}"
+						        xaxisMaxValue="#{controlEstadisticas.chartDataGenSegs.xaxisMaxValue}"
+						        numberOfYAxisTicks="#{controlEstadisticas.chartDataGenSegs.numberOfYAxisTicks}"
+						        yaxisMinValue="#{controlEstadisticas.chartDataGenSegs.yaxisMinValue}"
+						        markers="#{controlEstadisticas.chartDataGenSegs.markers}"
+						        markerPosition="#{controlEstadisticas.chartDataGenSegs.markerPosition}"
+						        yaxisMaxValue="#{controlEstadisticas.chartDataGenSegs.yaxisMaxValue}"
+						        crosshair="#{controlEstadisticas.chartDataGenSegs.crosshair}">
+						    </jsflot:flotChart>
+				  </h:panelGrid>
+			</h:panelGrid>
+			<h:panelGrid width="100%">
+				<t:fieldset legend="#{ms.est_basic_tab_gen_pats }" >
+					<h:panelGrid columns="2">
+						<h:outputLabel value="#{ms.est_basic_tab_gen_pats_total }:"/>	
+						<h:outputLabel value="#{controlEstadisticas.resgen7 }" style="font-weight: bold;" />				
+						<h:outputLabel value="#{ms.est_basic_tab_gen_pats_media }:"/>
+						<h:outputLabel value="#{controlEstadisticas.resgen5 }" style="font-weight: bold;" />
+						<h:outputLabel value="#{ms.est_basic_tab_gen_pats_nprocs }:"/>
+						<h:outputLabel value="#{controlEstadisticas.resgen3 }" style="font-weight: bold;" />
+					</h:panelGrid>
+					<h:panelGrid width="100%" columns="2" columnClasses="alignTop,alignRight">
+						<t:dataTable value="#{controlEstadisticas.genpatsexo}" var="proc" width="90%"
+								binding="#{controlEstadisticas.bindingGenPatSexo}" styleClass="hor-minimalist-b">
+					            <t:column width="50%" headerstyleClass="left">
+									<f:facet name="header">									
+										 <a4j:commandLink style="text-align: right;" reRender="graficasEstadisticasGeneral"
+											>
+											<h:outputText value="#{ms.est_basic_tab_gen_pats_sexo }" />		        
+											<h:graphicImage url="/img/iconos/icono_estadisticas.png" style="border:0px;"
+											title="#{ms.est_basic_grafica_title}" width="24" height="24"/>
+										</a4j:commandLink>
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="alignTop">								
+										<h:outputLabel value="#{proc.tipo }"/>
+									</h:panelGrid>
+								</t:column>	
+								<t:column width="20%" headerstyleClass="left">
+									<f:facet name="header">
+										<h:outputText value="#{ms.est_basic_numero }" />
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="right" width="100%">								
+										<h:outputLabel value="#{proc.numero }"/>
+									</h:panelGrid>
+								</t:column>
+								<t:column width="20%" headerstyleClass="right">
+									<f:facet name="header">
+										<h:outputText value="%" />
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="right" width="100%">								
+										<h:outputLabel value="#{proc.porcentaje }"/>
+									</h:panelGrid>
+								</t:column>            
+					        </t:dataTable>
+					        <h:panelGrid>
+					        	<jsflot:flotChart id="chartGeneralSexo"
+							        value="#{controlEstadisticas.chartSeriesGenSexo}"
+							        actionListener="#{controlEstadisticas.chartActionListener}"
+							        testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+							        chartDraggable="true"
+							        chartClickable="true"
+							        chartZoomable="#{controlEstadisticas.chartDataGenSexo.chartZoomable}"
+							        reRender="clickedPanel"
+							        showLines="false"
+							        fillLines="#{controlEstadisticas.chartDataGenSexo.fillLines}"
+							        showDataPoints="#{controlEstadisticas.chartDataGenSexo.showDataPoints}"
+							        legendColumns="#{controlEstadisticas.chartDataGenSexo.legendColumns}"
+							        legendOpacity="#{controlEstadisticas.chartDataGenSexo.legendOpacity}"
+							        legendPosition="#{controlEstadisticas.chartDataGenSexo.legendPosition}"
+							        legendColor="#{controlEstadisticas.chartDataGenSexo.legendColor}"
+							        height="#{controlEstadisticas.chartDataGenSexo.height}"
+							        width="#{controlEstadisticas.chartDataGenSexo.width}"
+							        showTooltip="#{controlEstadisticas.chartDataGenSexo.showTooltip}"
+							        tooltipPosition="#{controlEstadisticas.chartDataGenSexo.tooltipPosition}"
+							        tooltipFollowMouse="#{controlEstadisticas.chartDataGenSexo.tooltipFollowMouse}"
+							        mode="#{controlEstadisticas.chartDataGenSexo.mode}"
+							        timeFormat="#{controlEstadisticas.chartDataGenSexo.timeFormat}"
+							        title="#{controlEstadisticas.chartDataGenSexo.title}"
+							        subtitle="#{controlEstadisticas.chartDataGenSexo.subtitle}"
+							        chartType="pie"
+							        showXaxisLabels="false"
+							        xaxisTitle="#{controlEstadisticas.chartDataGenSexo.xaxisTitle}"
+							        xaxisTitleRotation="#{controlEstadisticas.chartDataGenSexo.xaxisTitleRotation}"
+							        xaxisLabelRotation="#{controlEstadisticas.chartDataGenSexo.xaxisLabelRotation}"
+							        showYaxisLabels="false"
+							        yaxisTitle="#{controlEstadisticas.chartDataGenSexo.yaxisTitle}"
+							        yaxisTitleRotation="#{controlEstadisticas.chartDataGenSexo.yaxisTitleRotation}"
+							        yaxisLabelRotation="#{controlEstadisticas.chartDataGenSexo.yaxisLabelRotation}"
+							        numberOfXAxisTicks="#{controlEstadisticas.chartDataGenSexo.numberOfXAxisTicks}"
+							        xaxisMinValue="#{controlEstadisticas.chartDataGenSexo.xaxisMinValue}"
+							        xaxisMaxValue="#{controlEstadisticas.chartDataGenSexo.xaxisMaxValue}"
+							        numberOfYAxisTicks="#{controlEstadisticas.chartDataGenSexo.numberOfYAxisTicks}"
+							        yaxisMinValue="#{controlEstadisticas.chartDataGenSexo.yaxisMinValue}"
+							        markers="#{controlEstadisticas.chartDataGenSexo.markers}"
+							        markerPosition="#{controlEstadisticas.chartDataGenSexo.markerPosition}"
+							        yaxisMaxValue="#{controlEstadisticas.chartDataGenSexo.yaxisMaxValue}"
+							        crosshair="#{controlEstadisticas.chartDataGenSexo.crosshair}">
+							    </jsflot:flotChart>
+					       </h:panelGrid> 
+						<t:dataTable value="#{controlEstadisticas.genpatcar}" var="proc" width="90%"
+								binding="#{controlEstadisticas.bindingGenPatCar}" styleClass="hor-minimalist-b">
+					           <t:column width="50%" headerstyleClass="left">
+									<f:facet name="header">			
+										<a4j:commandLink style="text-align: right;" reRender="graficasEstadisticasGeneral"
+											>
+											<h:outputText value="#{ms.est_basic_tab_gen_car_proc }" />		        
+											<h:graphicImage url="/img/iconos/icono_estadisticas.png" style="border:0px;"
+											title="#{ms.est_basic_grafica_title}" width="24" height="24"/>
+										</a4j:commandLink>
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="alignTop">								
+										<h:outputLabel value="#{proc.tipo }"/>
+									</h:panelGrid>
+								</t:column>	
+								<t:column width="20%" headerstyleClass="left">
+									<f:facet name="header">
+										<h:outputText value="#{ms.est_basic_numero }" />
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="right" width="100%">								
+										<h:outputLabel value="#{proc.numero }"/>
+									</h:panelGrid>
+								</t:column>
+								<t:column width="20%" headerstyleClass="right">
+									<f:facet name="header">
+										<h:outputText value="%" />
+									</f:facet>
+									<h:panelGrid columns="2" columnClasses="right" width="100%">								
+										<h:outputLabel value="#{proc.porcentaje }"/>
+									</h:panelGrid>
+								</t:column>            
+					        </t:dataTable>
+					        <h:panelGrid>
+					        	<jsflot:flotChart id="chartGeneralCarProc"
+							        value="#{controlEstadisticas.chartSeriesGenCarProc}"
+							        actionListener="#{controlEstadisticas.chartActionListener}"
+							        testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+							        chartDraggable="true"
+							        chartClickable="true"
+							        chartZoomable="#{controlEstadisticas.chartDataGenCarProc.chartZoomable}"
+							        reRender="clickedPanel"
+							        showLines="false"
+							        fillLines="#{controlEstadisticas.chartDataGenCarProc.fillLines}"
+							        showDataPoints="#{controlEstadisticas.chartDataGenCarProc.showDataPoints}"
+							        legendColumns="#{controlEstadisticas.chartDataGenCarProc.legendColumns}"
+							        legendOpacity="#{controlEstadisticas.chartDataGenCarProc.legendOpacity}"
+							        legendPosition="#{controlEstadisticas.chartDataGenCarProc.legendPosition}"
+							        legendColor="#{controlEstadisticas.chartDataGenCarProc.legendColor}"
+							        height="#{controlEstadisticas.chartDataGenCarProc.height}"
+							        width="#{controlEstadisticas.chartDataGenCarProc.width}"
+							        showTooltip="#{controlEstadisticas.chartDataGenCarProc.showTooltip}"
+							        tooltipPosition="#{controlEstadisticas.chartDataGenCarProc.tooltipPosition}"
+							        tooltipFollowMouse="#{controlEstadisticas.chartDataGenCarProc.tooltipFollowMouse}"
+							        mode="#{controlEstadisticas.chartDataGenCarProc.mode}"
+							        timeFormat="#{controlEstadisticas.chartDataGenCarProc.timeFormat}"
+							        title="#{controlEstadisticas.chartDataGenCarProc.title}"
+							        subtitle="#{controlEstadisticas.chartDataGenCarProc.subtitle}"
+							        chartType="pie"
+							        showXaxisLabels="false"
+							        xaxisTitle="#{controlEstadisticas.chartDataGenCarProc.xaxisTitle}"
+							        xaxisTitleRotation="#{controlEstadisticas.chartDataGenCarProc.xaxisTitleRotation}"
+							        xaxisLabelRotation="#{controlEstadisticas.chartDataGenCarProc.xaxisLabelRotation}"
+							        showYaxisLabels="false"
+							        yaxisTitle="#{controlEstadisticas.chartDataGenCarProc.yaxisTitle}"
+							        yaxisTitleRotation="#{controlEstadisticas.chartDataGenCarProc.yaxisTitleRotation}"
+							        yaxisLabelRotation="#{controlEstadisticas.chartDataGenCarProc.yaxisLabelRotation}"
+							        numberOfXAxisTicks="#{controlEstadisticas.chartDataGenCarProc.numberOfXAxisTicks}"
+							        xaxisMinValue="#{controlEstadisticas.chartDataGenCarProc.xaxisMinValue}"
+							        xaxisMaxValue="#{controlEstadisticas.chartDataGenCarProc.xaxisMaxValue}"
+							        numberOfYAxisTicks="#{controlEstadisticas.chartDataGenCarProc.numberOfYAxisTicks}"
+							        yaxisMinValue="#{controlEstadisticas.chartDataGenCarProc.yaxisMinValue}"
+							        markers="#{controlEstadisticas.chartDataGenCarProc.markers}"
+							        markerPosition="#{controlEstadisticas.chartDataGenCarProc.markerPosition}"
+							        yaxisMaxValue="#{controlEstadisticas.chartDataGenCarProc.yaxisMaxValue}"
+							        crosshair="#{controlEstadisticas.chartDataGenCarProc.crosshair}">
+							    </jsflot:flotChart>
+					        </h:panelGrid>
+					</h:panelGrid>
+				</t:fieldset>
+			</h:panelGrid>
+			<h:panelGrid width="100%">
+				<t:fieldset legend="#{ms.compli_proc_title }" >
+					<h:panelGrid columns="2">
+						<h:graphicImage value="/img/iconos/complicacion.png" width="16"
+							height="16" style="border:0;" rendered="#{controlEstadisticas.totalCompNoAsig ne null and controlEstadisticas.totalCompNoAsig ne 0}"/>
+						<h:outputLabel value="#{ms.compli_est_no_asig }: #{controlEstadisticas.totalCompNoAsig }" style="font-weight: bold;color:#E17009"/>
+					</h:panelGrid>
+					<h:panelGrid width="100%" columns="2" columnClasses="alignTop,alignRight">
+					 	<t:dataTable value="#{controlEstadisticas.genprocscomp}" var="proc" width="90%"
+							binding="#{controlEstadisticas.bindingGenProcsComp}" styleClass="hor-minimalist-b">
+					    	<t:column width="50%" headerstyleClass="left">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_tab_gen_proc }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="alignTop">								
+									<h:outputLabel value="#{proc.tipo }"/>
+								</h:panelGrid>
+							</t:column>	
+							<t:column width="20%" headerstyleClass="left">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_gen_comps }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="right" width="100%">								
+									<h:outputLabel value="#{proc.numero } (#{proc.porcentaje }%)"/>
+								</h:panelGrid>
+							</t:column>
+							<t:column width="20%" headerstyleClass="right">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_gen_comps_per }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="right" width="100%">								
+									<h:outputLabel value="#{proc.numero2 } (#{proc.porcentaje2 }%)"/>
+								</h:panelGrid>
+							</t:column> 
+							<t:column width="20%" headerstyleClass="right">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_gen_comps_pre }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="right" width="100%">								
+									<h:outputLabel value="#{proc.numero3 } (#{proc.porcentaje3 }%)"/>
+								</h:panelGrid>
+							</t:column>
+							<t:column width="20%" headerstyleClass="right">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_gen_comps_pos }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="right" width="100%">								
+									<h:outputLabel value="#{proc.numero4 } (#{proc.porcentaje4 }%)"/>
+								</h:panelGrid>
+							</t:column>           
+						</t:dataTable>
+						<h:panelGrid>
+							<jsflot:flotChart id="chartGenProcComp"
+								value="#{controlEstadisticas.chartSeriesGenProcComp}" 
+								actionListener="#{controlEstadisticas.chartActionListener}"
+								testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+								chartDraggable="true"
+								chartClickable="true"
+								chartZoomable="#{controlEstadisticas.chartDataGenProcComp.chartZoomable}"
+								reRender="clickedPanel"
+								showLines="false"
+								fillLines="#{controlEstadisticas.chartDataGenProcComp.fillLines}"
+								showDataPoints="#{controlEstadisticas.chartDataGenProcComp.showDataPoints}"
+								legendColumns="#{controlEstadisticas.chartDataGenProcComp.legendColumns}"
+								legendOpacity="#{controlEstadisticas.chartDataGenProcComp.legendOpacity}"
+								legendPosition="#{controlEstadisticas.chartDataGenProcComp.legendPosition}"
+								legendColor="#{controlEstadisticas.chartDataGenProcComp.legendColor}"
+								height="#{controlEstadisticas.chartDataGenProcComp.height}"
+								width="#{controlEstadisticas.chartDataGenProcComp.width}"
+								showTooltip="#{controlEstadisticas.chartDataGenProcComp.showTooltip}"
+								tooltipPosition="#{controlEstadisticas.chartDataGenProcComp.tooltipPosition}"
+								tooltipFollowMouse="#{controlEstadisticas.chartDataGenProcComp.tooltipFollowMouse}"
+								mode="#{controlEstadisticas.chartDataGenProcComp.mode}"
+								timeFormat="#{controlEstadisticas.chartDataGenProcComp.timeFormat}"
+								title="#{controlEstadisticas.chartDataGenProcComp.title}"
+								subtitle="#{controlEstadisticas.chartDataGenProcComp.subtitle}"
+								chartType="pie"
+								showXaxisLabels="false"
+								xaxisTitle="#{controlEstadisticas.chartDataGenProcComp.xaxisTitle}"
+								xaxisTitleRotation="#{controlEstadisticas.chartDataGenProcComp.xaxisTitleRotation}"
+								xaxisLabelRotation="#{controlEstadisticas.chartDataGenProcComp.xaxisLabelRotation}"
+								showYaxisLabels="false"
+								yaxisTitle="#{controlEstadisticas.chartDataGenProcComp.yaxisTitle}"
+								yaxisTitleRotation="#{controlEstadisticas.chartDataGenProcComp.yaxisTitleRotation}"
+								yaxisLabelRotation="#{controlEstadisticas.chartDataGenProcComp.yaxisLabelRotation}"
+								numberOfXAxisTicks="#{controlEstadisticas.chartDataGenProcComp.numberOfXAxisTicks}"
+								xaxisMinValue="#{controlEstadisticas.chartDataGenProcComp.xaxisMinValue}"
+								xaxisMaxValue="#{controlEstadisticas.chartDataGenProcComp.xaxisMaxValue}"
+								numberOfYAxisTicks="#{controlEstadisticas.chartDataGenProcComp.numberOfYAxisTicks}"
+								yaxisMinValue="#{controlEstadisticas.chartDataGenProcComp.yaxisMinValue}"
+								markers="#{controlEstadisticas.chartDataGenProcComp.markers}"
+								markerPosition="#{controlEstadisticas.chartDataGenProcComp.markerPosition}"
+								yaxisMaxValue="#{controlEstadisticas.chartDataGenProcComp.yaxisMaxValue}"
+								crosshair="#{controlEstadisticas.chartDataGenProcComp.crosshair}">
+							</jsflot:flotChart>
+						</h:panelGrid>
+					</h:panelGrid>
+					<h:panelGrid width="100%" columns="2" columnClasses="alignTop,alignRight">
+					 	<t:dataTable value="#{controlEstadisticas.gentipocomp}" var="proc" width="90%"
+							binding="#{controlEstadisticas.bindingGenTipoComp}" styleClass="hor-minimalist-b">
+					    	<t:column width="50%" headerstyleClass="left">
+								<f:facet name="header">
+									<h:outputText value="#{ms.compli_est_tipo }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="alignTop">								
+									<h:outputLabel value="#{proc.tipo }"/>
+								</h:panelGrid>
+							</t:column>	
+							<t:column width="20%" headerstyleClass="left">
+								<f:facet name="header">
+									<h:outputText value="#{ms.est_basic_gen_comps }" />
+								</f:facet>
+								<h:panelGrid columns="2" columnClasses="right" width="100%">								
+									<h:outputLabel value="#{proc.numero } (#{proc.porcentaje }%)"/>
+								</h:panelGrid>
+							</t:column>          
+						</t:dataTable>
+						<h:panelGrid>
+							<jsflot:flotChart id="chartGenTipoComp"
+								value="#{controlEstadisticas.chartSeriesGenTipoComp}" 
+								actionListener="#{controlEstadisticas.chartActionListener}"
+								testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+								chartDraggable="true"
+								chartClickable="true"
+								chartZoomable="#{controlEstadisticas.chartDataGenTipoComp.chartZoomable}"
+								reRender="clickedPanel"
+								showLines="false"
+								fillLines="#{controlEstadisticas.chartDataGenTipoComp.fillLines}"
+								showDataPoints="#{controlEstadisticas.chartDataGenTipoComp.showDataPoints}"
+								legendColumns="#{controlEstadisticas.chartDataGenTipoComp.legendColumns}"
+								legendOpacity="#{controlEstadisticas.chartDataGenTipoComp.legendOpacity}"
+								legendPosition="#{controlEstadisticas.chartDataGenTipoComp.legendPosition}"
+								legendColor="#{controlEstadisticas.chartDataGenTipoComp.legendColor}"
+								height="#{controlEstadisticas.chartDataGenTipoComp.height}"
+								width="#{controlEstadisticas.chartDataGenTipoComp.width}"
+								showTooltip="#{controlEstadisticas.chartDataGenTipoComp.showTooltip}"
+								tooltipPosition="#{controlEstadisticas.chartDataGenTipoComp.tooltipPosition}"
+								tooltipFollowMouse="#{controlEstadisticas.chartDataGenTipoComp.tooltipFollowMouse}"
+								mode="#{controlEstadisticas.chartDataGenTipoComp.mode}"
+								timeFormat="#{controlEstadisticas.chartDataGenTipoComp.timeFormat}"
+								title="#{controlEstadisticas.chartDataGenTipoComp.title}"
+								subtitle="#{controlEstadisticas.chartDataGenTipoComp.subtitle}"
+								chartType="pie"
+								showXaxisLabels="false"
+								xaxisTitle="#{controlEstadisticas.chartDataGenTipoComp.xaxisTitle}"
+								xaxisTitleRotation="#{controlEstadisticas.chartDataGenTipoComp.xaxisTitleRotation}"
+								xaxisLabelRotation="#{controlEstadisticas.chartDataGenTipoComp.xaxisLabelRotation}"
+								showYaxisLabels="false"
+								yaxisTitle="#{controlEstadisticas.chartDataGenTipoComp.yaxisTitle}"
+								yaxisTitleRotation="#{controlEstadisticas.chartDataGenTipoComp.yaxisTitleRotation}"
+								yaxisLabelRotation="#{controlEstadisticas.chartDataGenTipoComp.yaxisLabelRotation}"
+								numberOfXAxisTicks="#{controlEstadisticas.chartDataGenTipoComp.numberOfXAxisTicks}"
+								xaxisMinValue="#{controlEstadisticas.chartDataGenTipoComp.xaxisMinValue}"
+								xaxisMaxValue="#{controlEstadisticas.chartDataGenTipoComp.xaxisMaxValue}"
+								numberOfYAxisTicks="#{controlEstadisticas.chartDataGenTipoComp.numberOfYAxisTicks}"
+								yaxisMinValue="#{controlEstadisticas.chartDataGenTipoComp.yaxisMinValue}"
+								markers="#{controlEstadisticas.chartDataGenTipoComp.markers}"
+								markerPosition="#{controlEstadisticas.chartDataGenTipoComp.markerPosition}"
+								yaxisMaxValue="#{controlEstadisticas.chartDataGenTipoComp.yaxisMaxValue}"
+								crosshair="#{controlEstadisticas.chartDataGenTipoComp.crosshair}">
+							</jsflot:flotChart>
+						</h:panelGrid>
+					</h:panelGrid>
+				</t:fieldset>
+			</h:panelGrid>			
+		</h:panelGrid>
+	</h:panelGrid>
+	
+	<rich:modalPanel id="graficasEstadisticasGeneral" autosized="true" zindex="2000" minWidth="550" 		
+		onshow="JSFlot.AJAX.Submit('estadisticasbasicas', 'refresh', document.location, new JSFlot.Options(null, null, null, 
+		'estadisticasbasicas_estGenTab_chartGeneral2'));">
+		<f:facet name="header">
+			<h:panelGrid styleClass="center" border="0" columns="2" width="90%">
+				<h:outputText value="Información general"
+					styleClass="textoBlancoNegrita" />
+			</h:panelGrid>
+		</f:facet>
+		<f:facet name="controls">
+			<h:panelGrid>
+				<a4j:commandLink
+					onclick="javascript:Richfaces.hideModalPanel('graficasEstadisticasGeneral');"
+					reRender="graficasEstadisticasGeneral">
+					<h:graphicImage value="/img/aplicacion/icoCancelar.png"
+						style="border:0;cursor:pointer;"
+						onclick="javascript:Richfaces.hideModalPanel('graficasEstadisticasGeneral')"
+						title="Cancelar" />
+				</a4j:commandLink>						
+			</h:panelGrid>
+		</f:facet>
+			<jsflot:flotChart id="chartGeneral2"
+			        value="#{controlEstadisticas.chartSeries}"
+			        actionListener="#{controlEstadisticas.chartActionListener}"
+			        testChartDraggedAction="#{controlEstadisticas.chartDraggedListener}"
+			        chartDraggable="true"
+			        chartClickable="true"
+			        chartZoomable="#{controlEstadisticas.chartDataGen.chartZoomable}"
+			        reRender="clickedPanel"
+			        showLines="false"
+			        fillLines="#{controlEstadisticas.chartDataGen.fillLines}"
+			        showDataPoints="#{controlEstadisticas.chartDataGen.showDataPoints}"
+			        legendColumns="#{controlEstadisticas.chartDataGen.legendColumns}"
+			        legendOpacity="#{controlEstadisticas.chartDataGen.legendOpacity}"
+			        legendPosition="#{controlEstadisticas.chartDataGen.legendPosition}"
+			        legendColor="#{controlEstadisticas.chartDataGen.legendColor}"
+			        height="#{controlEstadisticas.chartDataGen.height}"
+			        width="#{controlEstadisticas.chartDataGen.width}"
+			        showTooltip="#{controlEstadisticas.chartDataGen.showTooltip}"
+			        tooltipPosition="#{controlEstadisticas.chartDataGen.tooltipPosition}"
+			        tooltipFollowMouse="#{controlEstadisticas.chartDataGen.tooltipFollowMouse}"
+			        mode="#{controlEstadisticas.chartDataGen.mode}"
+			        timeFormat="#{controlEstadisticas.chartDataGen.timeFormat}"
+			        title="#{controlEstadisticas.chartDataGen.title}"
+			        subtitle="#{controlEstadisticas.chartDataGen.subtitle}"
+			        chartType="pie"
+			        showXaxisLabels="false"
+			        xaxisTitle="#{controlEstadisticas.chartDataGen.xaxisTitle}"
+			        xaxisTitleRotation="#{controlEstadisticas.chartDataGen.xaxisTitleRotation}"
+			        xaxisLabelRotation="#{controlEstadisticas.chartDataGen.xaxisLabelRotation}"
+			        showYaxisLabels="false"
+			        yaxisTitle="#{controlEstadisticas.chartDataGen.yaxisTitle}"
+			        yaxisTitleRotation="#{controlEstadisticas.chartDataGen.yaxisTitleRotation}"
+			        yaxisLabelRotation="#{controlEstadisticas.chartDataGen.yaxisLabelRotation}"
+			        numberOfXAxisTicks="#{controlEstadisticas.chartDataGen.numberOfXAxisTicks}"
+			        xaxisMinValue="#{controlEstadisticas.chartDataGen.xaxisMinValue}"
+			        xaxisMaxValue="#{controlEstadisticas.chartDataGen.xaxisMaxValue}"
+			        numberOfYAxisTicks="#{controlEstadisticas.chartDataGen.numberOfYAxisTicks}"
+			        yaxisMinValue="#{controlEstadisticas.chartDataGen.yaxisMinValue}"
+			        markers="#{controlEstadisticas.chartDataGen.markers}"
+			        markerPosition="#{controlEstadisticas.chartDataGen.markerPosition}"
+			        yaxisMaxValue="#{controlEstadisticas.chartDataGen.yaxisMaxValue}"
+			        crosshair="#{controlEstadisticas.chartDataGen.crosshair}">
+			    </jsflot:flotChart>
+	</rich:modalPanel>
+
+</ui:composition>

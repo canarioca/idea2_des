@@ -1,0 +1,7 @@
+########################################################
+#### DIRECTORIO DE ALMACENAMIENTO DE ORUS ##############
+########################################################
+dir_oru=C:/SORIN_IDEA/INTEGRACION/ORU
+#dir_oru=/intprog/idea/oru
+dir_informes_seguimientos=C:/SORIN_IDEA/INFORMES/SEGUIMIENTOS
+#dir_informes_seguimientos=/intprog/idea/informes/seguimientos

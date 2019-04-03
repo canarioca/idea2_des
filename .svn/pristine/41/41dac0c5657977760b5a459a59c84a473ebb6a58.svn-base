@@ -1,0 +1,5 @@
+package com.sorin.idea.dto;
+
+public class CalidadSuenoDTO {
+
+}

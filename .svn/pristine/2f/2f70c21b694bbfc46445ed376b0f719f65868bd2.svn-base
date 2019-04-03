@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.4.1 Built on : Aug 13, 2008 (05:03:35 
+	LKT) -->
+<serviceGroup>
+	<service name="ReceptorHL7"><!--class="spring.SpringInit">-->
+		<messageReceivers>
+			<messageReceiver mep="http://www.w3.org/ns/wsdl/in-out"
+				class="com.sorin.idea.integracion.ReceptorHL7MessageReceiverInOut" />
+		</messageReceivers>
+		<parameter name="ServiceClass">com.sorin.idea.integracion.ReceptorHL7Skeleton
+		</parameter>
+		<parameter name="useOriginalwsdl">true</parameter>
+		<parameter name="modifyUserWSDLPortAddress">true</parameter>
+		<operation name="recibeHL7" mep="http://www.w3.org/ns/wsdl/in-out"
+			namespace="http://com/sorin/idea/integracion">
+			<actionMapping>urn:recibeHL7</actionMapping>
+			<outputActionMapping>urn:recibeHL7</outputActionMapping>
+		</operation>
+	</service>
+</serviceGroup>

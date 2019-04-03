@@ -1,0 +1,89 @@
+package com.sorin.idea.dto;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class RehabiliatadorDTO implements Serializable{
+
+	private static final long serialVersionUID = -1085311807220348514L;
+	
+	protected Date fechaRehabilitador;
+	protected boolean sedentarismo;
+	protected String nivelEjercicio;
+	protected String horasEjercicio;
+	protected String parametroFVC;
+	protected String parametroFEVI;
+	protected String ansiedadFEVIFVC;
+	protected int problemasArticulares;
+	protected int problemasCognitivos;
+	protected int problemasSensoriales;
+	protected int nivelEducativoSanitario;
+	
+	public boolean getSedentarismo() {
+		return sedentarismo;
+	}
+	public void setSedentarismo(boolean sedentarismo) {
+		this.sedentarismo = sedentarismo;
+	}
+	public String getNivelEjercicio() {
+		return nivelEjercicio;
+	}
+	public void setNivelEjercicio(String nivelEjercicio) {
+		this.nivelEjercicio = nivelEjercicio;
+	}
+	public String getHorasEjercicio() {
+		return horasEjercicio;
+	}
+	public void setHorasEjercicio(String horasEjercicio) {
+		this.horasEjercicio = horasEjercicio;
+	}
+	public String getParametroFVC() {
+		return parametroFVC;
+	}
+	public void setParametroFVC(String parametroFVC) {
+		this.parametroFVC = parametroFVC;
+	}
+	public String getParametroFEVI() {
+		return parametroFEVI;
+	}
+	public void setParametroFEVI(String parametroFEVI) {
+		this.parametroFEVI = parametroFEVI;
+	}
+	public String getAnsiedadFEVIFVC() {
+		return ansiedadFEVIFVC;
+	}
+	public void setAnsiedadFEVIFVC(String ansiedadFEVIFVC) {
+		this.ansiedadFEVIFVC = ansiedadFEVIFVC;
+	}
+	public int getProblemasArticulares() {
+		return problemasArticulares;
+	}
+	public void setProblemasArticulares(int problemasArticulares) {
+		this.problemasArticulares = problemasArticulares;
+	}
+	public int getProblemasCognitivos() {
+		return problemasCognitivos;
+	}
+	public void setProblemasCognitivos(int problemasCognitivos) {
+		this.problemasCognitivos = problemasCognitivos;
+	}
+	public int getProblemasSensoriales() {
+		return problemasSensoriales;
+	}
+	public void setProblemasSensoriales(int problemasSensoriales) {
+		this.problemasSensoriales = problemasSensoriales;
+	}
+	public int getNivelEducativoSanitario() {
+		return nivelEducativoSanitario;
+	}
+	public void setNivelEducativoSanitario(int nivelEducativoSanitario) {
+		this.nivelEducativoSanitario = nivelEducativoSanitario;
+	}
+	public Date getFechaRehabilitador() {
+		return fechaRehabilitador;
+	}
+	public void setFechaRehabilitador(Date fechaRehabilitador) {
+		this.fechaRehabilitador = fechaRehabilitador;
+	}
+	
+}

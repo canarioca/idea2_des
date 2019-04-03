@@ -1,0 +1,129 @@
+package com.sorin.idea.iu;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
+import javax.faces.model.SelectItem;
+
+import com.sorin.idea.dto.NutricionistaDTO;
+import com.sorin.idea.dto.PsicologaDTO;
+import com.sorin.idea.dto.RcPsicoCalidadSueno;
+import com.sorin.idea.dto.RehabiliatadorDTO;
+import com.sorin.idea.dto.RehabilitacionCardiacaDTO;
+import com.sorin.idea.servicios.impl.ServicioCalidadSuenoImpl;
+
+import hvn.cm.iu.IUException;
+
+public class ControlRehabilitacionCardiaca extends BaseIU {
+	
+	private static final long serialVersionUID = -9124682645981585801L;
+	
+	private SelectorIdioma si;
+	private ResourceBundle bundle;
+	RehabilitacionCardiacaDTO rehabilitacionCardiacaDTO = null;
+	RehabiliatadorDTO rehabilitadorDTO = null;
+	PsicologaDTO psicologaDTO = null;
+	NutricionistaDTO nutricionistaDTO = null;
+	
+	public ControlRehabilitacionCardiaca() {
+		
+		try {
+			this.si = (SelectorIdioma) getBean("selectorIdioma");
+			if (this.si == null)
+				this.si = new SelectorIdioma();
+			setBean("selectorIdioma", this.si);
+			FacesContext context = FacesContext.getCurrentInstance();
+			this.bundle = ResourceBundle.getBundle(context.getApplication().getMessageBundle(), si.getLocale());
+		} catch (IUException e) {
+			logError(this.bundle.getString("info_msg_error_carga_user"));
+		}
+	}
+	
+	public RehabilitacionCardiacaDTO iniciaRehabilitacionCardiaca(ActionEvent e) {
+		
+		rehabilitacionCardiacaDTO = new RehabilitacionCardiacaDTO();
+		rehabilitadorDTO = new RehabiliatadorDTO();
+		psicologaDTO     = new PsicologaDTO();
+		nutricionistaDTO = new NutricionistaDTO();
+		ServicioCalidadSuenoImpl calidadSuenoImpl = new ServicioCalidadSuenoImpl();
+		
+		List<RcPsicoCalidadSueno> listaCalidadSueno = calidadSuenoImpl.obtenerListaCalidadSueno();
+		
+		   int indice = 0;
+		   psicologaDTO.setSelectItemsCheck(new SelectItem[listaCalidadSueno.size()]); 
+		   
+		   List<String> selectedsValuesCheckbox = new ArrayList<String>();
+		   SelectItem[] selectItemsCheck = new SelectItem[listaCalidadSueno.size()];
+		   
+		   for (RcPsicoCalidadSueno myObject : listaCalidadSueno) {
+		      selectItemsCheck [indice++] = new SelectItem( myObject.getIdCalidadSueno(), myObject.getTipo() ); // value and label
+		   }
+		   
+		   psicologaDTO.setCalidadSueno(listaCalidadSueno);
+		   psicologaDTO.setSelectItemsCheck( selectItemsCheck );
+		   psicologaDTO.setSelectedsValuesCheckbox(selectedsValuesCheckbox);
+		
+		   rehabilitacionCardiacaDTO.setRehabilitadorDTO(rehabilitadorDTO);
+		   rehabilitacionCardiacaDTO.setPsicologaDTO(psicologaDTO);
+		   rehabilitacionCardiacaDTO.setNutricionistaDTO(nutricionistaDTO);
+		   
+		return rehabilitacionCardiacaDTO;
+	}
+	
+	public void guardarRehabilitacionCardiaca() {
+		
+		
+		
+	}
+
+	public RehabilitacionCardiacaDTO getRehabilitacionCardiacaDTO() {
+		return rehabilitacionCardiacaDTO;
+	}
+
+	public void setRehabilitacionCardiacaDTO(RehabilitacionCardiacaDTO rehabilitacionCardiacaDTO) {
+		this.rehabilitacionCardiacaDTO = rehabilitacionCardiacaDTO;
+	}
+
+	public SelectorIdioma getSi() {
+		return si;
+	}
+
+	public void setSi(SelectorIdioma si) {
+		this.si = si;
+	}
+
+	public ResourceBundle getBundle() {
+		return bundle;
+	}
+
+	public void setBundle(ResourceBundle bundle) {
+		this.bundle = bundle;
+	}
+
+	public RehabiliatadorDTO getRehabilitadorDTO() {
+		return rehabilitadorDTO;
+	}
+
+	public void setRehabilitadorDTO(RehabiliatadorDTO rehabilitadorDTO) {
+		this.rehabilitadorDTO = rehabilitadorDTO;
+	}
+
+	public PsicologaDTO getPsicologaDTO() {
+		return psicologaDTO;
+	}
+
+	public void setPsicologaDTO(PsicologaDTO psicologaDTO) {
+		this.psicologaDTO = psicologaDTO;
+	}
+
+	public NutricionistaDTO getNutricionistaDTO() {
+		return nutricionistaDTO;
+	}
+
+	public void setNutricionistaDTO(NutricionistaDTO nutricionistaDTO) {
+		this.nutricionistaDTO = nutricionistaDTO;
+	}
+}

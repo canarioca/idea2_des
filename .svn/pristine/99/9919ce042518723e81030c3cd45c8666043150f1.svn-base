@@ -1,0 +1,233 @@
+package com.sorin.idea.dto;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+
+
+public class PsicologaDTO implements Serializable{
+
+	private static final long serialVersionUID = -709174698384493371L;
+	
+	protected Date fechaPsicologa;
+	protected String profesion;
+	protected int estadoCivil;
+	protected int nivelEstudios;
+	protected int nivelSatisfaccion;
+	protected int situacionLaboral;
+	protected int situacionEconomica;
+	protected boolean antecedentesPsiquiatricosPersonales;
+	protected String antecedentesPsiquiatricosPersonalesDiagnostico;
+	protected boolean antecedentesPsiquiatricosFamiliares;
+	protected String antecedentesPsiquiatricosFamiliaresDiagnostico;
+	protected String antecedentesPsiquiatricosFamiliaresGrado;
+	protected int apoyoSocial;
+	protected int numHijos;
+	protected int familia;
+	protected int nivelIrritabilidad;
+	protected int vidaSexual;
+	protected String depresionDBI;
+	protected String ansiedadSTAI;
+	protected String ansiedadAE;
+	protected String ansiedadAR;
+	protected String afrontamientoFSP;
+	protected String afrontamientoAFN;
+	protected String afrontamientoREP;
+	protected String afrontamientoEEA;
+	protected String afrontamientoEVI;
+	protected String afrontamientoBAS;
+	protected String afrontamientoRLG;
+	
+	protected List<RcPsicoCalidadSueno> calidadSueno;
+	protected List<String> selectedsValuesCheckbox;
+	protected SelectItem[] selectItemsCheck;
+	
+	public String getProfesion() {
+		return profesion;
+	}
+	public void setProfesion(String profesion) {
+		this.profesion = profesion;
+	}
+	public int getEstadoCivil() {
+		return estadoCivil;
+	}
+	public void setEstadoCivil(int estadoCivil) {
+		this.estadoCivil = estadoCivil;
+	}
+	public int getNivelEstudios() {
+		return nivelEstudios;
+	}
+	public void setNivelEstudios(int nivelEstudios) {
+		this.nivelEstudios = nivelEstudios;
+	}
+	public int getSituacionLaboral() {
+		return situacionLaboral;
+	}
+	public void setSituacionLaboral(int situacionLaboral) {
+		this.situacionLaboral = situacionLaboral;
+	}
+	public int getSituacionEconomica() {
+		return situacionEconomica;
+	}
+	public void setSituacionEconomica(int situacionEconomica) {
+		this.situacionEconomica = situacionEconomica;
+	}
+	public int getApoyoSocial() {
+		return apoyoSocial;
+	}
+	public void setApoyoSocial(int apoyoSocial) {
+		this.apoyoSocial = apoyoSocial;
+	}
+	public int getNumHijos() {
+		return numHijos;
+	}
+	public void setNumHijos(int numHijos) {
+		this.numHijos = numHijos;
+	}
+	public int getFamilia() {
+		return familia;
+	}
+	public void setFamilia(int familia) {
+		this.familia = familia;
+	}
+	public int getNivelIrritabilidad() {
+		return nivelIrritabilidad;
+	}
+	public void setNivelIrritabilidad(int nivelIrritabilidad) {
+		this.nivelIrritabilidad = nivelIrritabilidad;
+	}
+	public int getVidaSexual() {
+		return vidaSexual;
+	}
+	public void setVidaSexual(int vidaSexual) {
+		this.vidaSexual = vidaSexual;
+	}
+	public String getDepresionDBI() {
+		return depresionDBI;
+	}
+	public void setDepresionDBI(String depresionDBI) {
+		this.depresionDBI = depresionDBI;
+	}
+	public String getAnsiedadSTAI() {
+		return ansiedadSTAI;
+	}
+	public void setAnsiedadSTAI(String ansiedadSTAI) {
+		this.ansiedadSTAI = ansiedadSTAI;
+	}
+	public String getAnsiedadAE() {
+		return ansiedadAE;
+	}
+	public void setAnsiedadAE(String ansiedadAE) {
+		this.ansiedadAE = ansiedadAE;
+	}
+	public String getAnsiedadAR() {
+		return ansiedadAR;
+	}
+	public void setAnsiedadAR(String ansiedadAR) {
+		this.ansiedadAR = ansiedadAR;
+	}
+	public String getAfrontamientoFSP() {
+		return afrontamientoFSP;
+	}
+	public void setAfrontamientoFSP(String afrontamientoFSP) {
+		this.afrontamientoFSP = afrontamientoFSP;
+	}
+	public String getAfrontamientoAFN() {
+		return afrontamientoAFN;
+	}
+	public void setAfrontamientoAFN(String afrontamientoAFN) {
+		this.afrontamientoAFN = afrontamientoAFN;
+	}
+	public String getAfrontamientoREP() {
+		return afrontamientoREP;
+	}
+	public void setAfrontamientoREP(String afrontamientoREP) {
+		this.afrontamientoREP = afrontamientoREP;
+	}
+	public String getAfrontamientoEEA() {
+		return afrontamientoEEA;
+	}
+	public void setAfrontamientoEEA(String afrontamientoEEA) {
+		this.afrontamientoEEA = afrontamientoEEA;
+	}
+	public String getAfrontamientoEVI() {
+		return afrontamientoEVI;
+	}
+	public void setAfrontamientoEVI(String afrontamientoEVI) {
+		this.afrontamientoEVI = afrontamientoEVI;
+	}
+	public String getAfrontamientoBAS() {
+		return afrontamientoBAS;
+	}
+	public void setAfrontamientoBAS(String afrontamientoBAS) {
+		this.afrontamientoBAS = afrontamientoBAS;
+	}
+	public String getAfrontamientoRLG() {
+		return afrontamientoRLG;
+	}
+	public void setAfrontamientoRLG(String afrontamientoRLG) {
+		this.afrontamientoRLG = afrontamientoRLG;
+	}
+	public Date getFechaPsicologa() {
+		return fechaPsicologa;
+	}
+	public void setFechaPsicologa(Date fechaPsicologa) {
+		this.fechaPsicologa = fechaPsicologa;
+	}
+	public int getNivelSatisfaccion() {
+		return nivelSatisfaccion;
+	}
+	public void setNivelSatisfaccion(int nivelSatisfaccion) {
+		this.nivelSatisfaccion = nivelSatisfaccion;
+	}
+	public boolean isAntecedentesPsiquiatricosPersonales() {
+		return antecedentesPsiquiatricosPersonales;
+	}
+	public void setAntecedentesPsiquiatricosPersonales(boolean antecedentesPsiquiatricosPersonales) {
+		this.antecedentesPsiquiatricosPersonales = antecedentesPsiquiatricosPersonales;
+	}
+	public String getAntecedentesPsiquiatricosPersonalesDiagnostico() {
+		return antecedentesPsiquiatricosPersonalesDiagnostico;
+	}
+	public void setAntecedentesPsiquiatricosPersonalesDiagnostico(String antecedentesPsiquiatricosPersonalesDiagnostico) {
+		this.antecedentesPsiquiatricosPersonalesDiagnostico = antecedentesPsiquiatricosPersonalesDiagnostico;
+	}
+	public boolean isAntecedentesPsiquiatricosFamiliares() {
+		return antecedentesPsiquiatricosFamiliares;
+	}
+	public void setAntecedentesPsiquiatricosFamiliares(boolean antecedentesPsiquiatricosFamiliares) {
+		this.antecedentesPsiquiatricosFamiliares = antecedentesPsiquiatricosFamiliares;
+	}
+	public String getAntecedentesPsiquiatricosFamiliaresDiagnostico() {
+		return antecedentesPsiquiatricosFamiliaresDiagnostico;
+	}
+	public void setAntecedentesPsiquiatricosFamiliaresDiagnostico(String antecedentesPsiquiatricosFamiliaresDiagnostico) {
+		this.antecedentesPsiquiatricosFamiliaresDiagnostico = antecedentesPsiquiatricosFamiliaresDiagnostico;
+	}
+	public String getAntecedentesPsiquiatricosFamiliaresGrado() {
+		return antecedentesPsiquiatricosFamiliaresGrado;
+	}
+	public void setAntecedentesPsiquiatricosFamiliaresGrado(String antecedentesPsiquiatricosFamiliaresGrado) {
+		this.antecedentesPsiquiatricosFamiliaresGrado = antecedentesPsiquiatricosFamiliaresGrado;
+	}
+	public List<RcPsicoCalidadSueno> getCalidadSueno() {
+		return calidadSueno;
+	}
+	public void setCalidadSueno(List<RcPsicoCalidadSueno> listaCalidadSueno) {
+		this.calidadSueno = listaCalidadSueno;
+	}
+	public List<String> getSelectedsValuesCheckbox() {
+		return selectedsValuesCheckbox;
+	}
+	public void setSelectedsValuesCheckbox(List<String> selectedsValuesCheckbox) {
+		this.selectedsValuesCheckbox = selectedsValuesCheckbox;
+	}
+	public SelectItem[] getSelectItemsCheck() {
+		return selectItemsCheck;
+	}
+	public void setSelectItemsCheck(SelectItem[] selectItemsCheck) {
+		this.selectItemsCheck = selectItemsCheck;
+	}
+}

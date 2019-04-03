@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://integracion.idea.sorin.com" xmlns:s0="http://integracion.idea.sorin.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://integracion.idea.sorin.com">
+            <s:element name="inRequest">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element minOccurs="1" name="request" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="outResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="response" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>			                    
+    </s:schema>
+  </types>
+  <message name="recibeHL7SoapOut">
+    <part name="parameters" element="s0:outResponse">
+    </part>
+  </message>
+  <message name="recibeHL7SoapIn">
+    <part name="parameters" element="s0:inRequest">
+    </part>
+  </message>
+  <portType name="ReceptorHL7Soap">
+    <operation name="recibeHL7">
+      <input message="s0:recibeHL7SoapIn">
+    </input>
+      <output message="s0:recibeHL7SoapOut">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ReceptorHL7Soap" type="s0:ReceptorHL7Soap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="recibeHL7">
+      <soap:operation soapAction="http://integracion.idea.sorin.com/RepositorioDocumentos.recibeHL7" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ReceptorHL7">
+    <port name="ReceptorHL7Soap" binding="s0:ReceptorHL7Soap">
+      <soap:address location="http://localhost:8080/idea/services/ReceptorHL7"/>
+    </port>
+  </service>
+</definitions>

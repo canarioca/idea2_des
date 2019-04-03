@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13516068183210" configfile="/idea/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="9394" id="pf13528018813010" referenceLink="//@navigationRule.69/@fromViewId|" outlinks="pf13528018813011 pf13528018813012 pf13528018813013 pf13528018813014 pf13528018813015 pf13528018813016 pf13528018813017 pf13528018813018 pf13528018813019 pf135280188130110 pf135280188130111 pf135280188130112 pf135280188130113 pf135280188130114 pf135280188130115 pf135280188130116 pf135280188130117 pf135280188130118 pf135280188130119 pf135280188130120 pf135280188130121 pf135280188130122 pf135280188130123 pf135280188130124 pf135280188130125 pf135280188130126 pf135280188130127 pf135280188130128 pf135280188130129 pf135280188130130 pf135280188130131 pf135280206476469 pf135280206476470 pf13578094100162 pf13618664296250 pf13632592470590 pf13632592470591 pf13651474926590 pf13715547913120 pf13728519862360 pf13728519862361 pf13747640524810 pf13986872932810 pf14055888657650 pf14139753149170 pf14697033624533 pf14697948923751 pf14984684490000 pf14984699152183 pf14984699152184 pf15126392991870 pf15126392991871 pf15306054204531 pf15306054326404 pf15320696859682 pf15320696859683 pf15324238252960 pf15324238252961 pf15483447902356" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index" x="338" y="178" id="pf135280188130134" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf135280188130135" inlinks="pf13528018813011 pf135280188130135" path="/index.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/pacientes/consultaPaciente" x="338" y="562" id="pf135280188130136" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf13528018813012" path="/ventanas/pacientes/consultaPaciente.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/pacientes/nuevoPaciente" x="554" y="10997" id="pf135280188130137" referenceLink="//@navigationRule.58/@navigationCase.0/@toViewId|" inlinks="pf13528018813013 pf13679170085130 pf13679171383831 pf14724779261400 pf14984684490001" path="/ventanas/pacientes/nuevoPaciente.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="cardioversion/cardioversion" x="338" y="946" id="pf135280188130138" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" outlinks="pf135280188130139" inlinks="pf13528018813014 pf135280188130139" path="/ventanas/cardioversion/cardioversion.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="desfibriladores/desfibriladores" x="338" y="1330" id="pf135280188130140" referenceLink="//@navigationRule.16/@navigationCase.0/@toViewId|" outlinks="pf135280188130141" inlinks="pf13528018813015 pf135280188130141" path="/ventanas/desfibriladores/desfibriladores.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eef/eef" x="338" y="1714" id="pf135280188130142" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf13528018813016" path="/ventanas/eef/eef.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/maestras" x="338" y="2098" id="pf135280188130143" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf13528018813017" path="/ventanas/administracion/maestras.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/audita" x="338" y="2482" id="pf135280188130144" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf13528018813018" path="/ventanas/administracion/audita.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/acceso" x="338" y="2866" id="pf135280188130145" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf13528018813019" path="/ventanas/administracion/acceso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eef/dispositivos/generalDispositivos" x="338" y="3250" id="pf135280188130146" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf135280188130110" path="/ventanas/eef/dispositivos/generalDispositivos.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/cardioversion/histo" x="338" y="3634" id="pf135280188130147" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" inlinks="pf135280188130111" path="/ventanas/cardioversion/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eef/histo" x="338" y="4018" id="pf135280188130148" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf135280188130112" path="/ventanas/eef/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/espera/lespera" x="338" y="4402" id="pf135280188130149" referenceLink="//@navigationRule.14/@navigationCase.0/@toViewId|" inlinks="pf135280188130113" path="/ventanas/espera/lespera.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/desfibriladores/histo" x="338" y="4786" id="pf135280188130150" referenceLink="//@navigationRule.15/@navigationCase.0/@toViewId|" inlinks="pf135280188130114" path="/ventanas/desfibriladores/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test/histo" x="338" y="5170" id="pf135280188130151" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" inlinks="pf135280188130115" path="/ventanas/test/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test/flecainida" x="338" y="5554" id="pf135280188131752" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" inlinks="pf135280188130116" path="/ventanas/test/flecainida.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test/epinefrina" x="338" y="5938" id="pf135280188131753" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" inlinks="pf135280188130117" path="/ventanas/test/epinefrina.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test/atp" x="338" y="6322" id="pf135280188131754" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" inlinks="pf135280188130118" path="/ventanas/test/atp.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eef/enfermeria" x="338" y="6706" id="pf135280188131755" referenceLink="//@navigationRule.22/@navigationCase.0/@toViewId|" inlinks="pf135280188130119" path="/ventanas/eef/enfermeria.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/espera/nuevo" x="338" y="7090" id="pf135280188131756" referenceLink="//@navigationRule.23/@navigationCase.0/@toViewId|" inlinks="pf135280188130120" path="/ventanas/espera/nuevo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eef/histoenf" x="338" y="7474" id="pf135280188131757" referenceLink="//@navigationRule.24/@navigationCase.0/@toViewId|" inlinks="pf135280188130121" path="/ventanas/eef/histoenf.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/estadisticasm" x="338" y="7858" id="pf135280188131758" referenceLink="//@navigationRule.25/@navigationCase.0/@toViewId|" inlinks="pf135280188130122" path="/ventanas/administracion/estadisticasm.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/estadisticasano" x="338" y="8242" id="pf135280188131759" referenceLink="//@navigationRule.26/@navigationCase.0/@toViewId|" inlinks="pf135280188130123" path="/ventanas/administracion/estadisticasano.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/anual" x="338" y="8626" id="pf135280188131760" referenceLink="//@navigationRule.29/@navigationCase.0/@toViewId|" inlinks="pf135280188130124" path="/ventanas/administracion/anual.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="timeout" x="338" y="9010" id="pf135280188131761" referenceLink="//@navigationRule.30/@navigationCase.0/@toViewId|" inlinks="pf135280188130125" path="/timeout.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/consultas" x="338" y="9394" id="pf135280188131762" referenceLink="//@navigationRule.31/@navigationCase.0/@toViewId|" inlinks="pf135280188130126" path="/ventanas/administracion/consultas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="basculante/mesas" x="338" y="9778" id="pf135280188131763" referenceLink="//@navigationRule.34/@navigationCase.0/@toViewId|" outlinks="pf135280188131764" inlinks="pf135280188130127 pf135280188131764" path="/ventanas/basculante/mesas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="basculante/mesas" x="338" y="11719" id="pf135280188131765" referenceLink="//@navigationRule.37/@navigationCase.0/@toViewId|" outlinks="pf135280188131766" inlinks="pf135280188130128 pf135280188130130 pf135280188131766" path="/ventanas/eventos/evento.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/basculante/histo" x="338" y="12103" id="pf135280188131767" referenceLink="//@navigationRule.35/@navigationCase.0/@toViewId|" inlinks="pf135280188130129" path="/ventanas/basculante/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/eventos/histo" x="338" y="12487" id="pf135280188131768" referenceLink="//@navigationRule.38/@navigationCase.0/@toViewId|" inlinks="pf135280188130131" path="/ventanas/eventos/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/marcapasos/marcapasos" x="338" y="12871" id="pf135280206476471" referenceLink="//@navigationRule.39/@navigationCase.0/@toViewId|" inlinks="pf135280206476469" path="/ventanas/marcapasos/marcapasos.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/marcapasos/histo" x="338" y="13255" id="pf135280206476472" referenceLink="//@navigationRule.40/@navigationCase.0/@toViewId|" inlinks="pf135280206476470" path="/ventanas/marcapasos/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="implantes/implantes" x="338" y="10162" id="pf13578094100163" referenceLink="//@navigationRule.44/@navigationCase.0/@toViewId|" outlinks="pf13679170085130 pf13679187130862" inlinks="pf13578094100162 pf13679187130862" path="/ventanas/implantes/implantes.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/implantes/histo" x="338" y="13639" id="pf13618664296251" referenceLink="//@navigationRule.42/@navigationCase.0/@toViewId|" inlinks="pf13618664296250" path="/ventanas/implantes/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="seguimientos/seguimientos" x="338" y="10546" id="pf13632592470592" referenceLink="//@navigationRule.48/@navigationCase.0/@toViewId|" outlinks="pf13679171383831 pf13679187360063" inlinks="pf13632592470590 pf13679187360063" path="/ventanas/seguimientos/seguimientos.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/seguimientos/histo" x="338" y="14023" id="pf13632592470593" referenceLink="//@navigationRule.46/@navigationCase.0/@toViewId|" inlinks="pf13632592470591" path="/ventanas/seguimientos/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/exportacion" x="338" y="14407" id="pf13651474926591" referenceLink="//@navigationRule.49/@navigationCase.0/@toViewId|" inlinks="pf13651474926590" path="/ventanas/administracion/exportacion.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/pacientes/menuPaciente" x="338" y="14791" id="pf13680026842201" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf13715547913120" path="/ventanas/pacientes/menuPaciente.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/material" x="338" y="15175" id="pf13728519862362" referenceLink="//@navigationRule.50/@navigationCase.0/@toViewId|" inlinks="pf13728519862360" path="/ventanas/administracion/material.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/estadisticasgen" x="338" y="15559" id="pf13728519862363" referenceLink="//@navigationRule.27/@navigationCase.0/@toViewId|" inlinks="pf13728519862361" path="/ventanas/administracion/estadisticasgen.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/estadisticasbasicas" x="338" y="15943" id="pf13747640524811" referenceLink="//@navigationRule.28/@navigationCase.0/@toViewId|" inlinks="pf13747640524810" path="/ventanas/administracion/estadisticasbasicas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/citas" x="338" y="16327" id="pf13986872932811" referenceLink="//@navigationRule.51/@navigationCase.0/@toViewId|" inlinks="pf13986872932810" path="/ventanas/administracion/citas.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/personal/perfil" x="338" y="16711" id="pf14055888657651" referenceLink="//@navigationRule.52/@navigationCase.0/@toViewId|" inlinks="pf14055888657650" path="/ventanas/personal/perfil.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/integraciones/gestion_integraciones" x="338" y="17095" id="pf14139753149331" referenceLink="//@navigationRule.53/@navigationCase.0/@toViewId|" inlinks="pf14139753149170" path="/ventanas/integraciones/gestion_integraciones.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="338" y="10930" id="pf14697033624534" referenceLink="//@navigationRule.56/@fromViewId|" outlinks="pf14724779261400" inlinks="pf14697033624533" path="/ventanas/seguimientos_clinicos/seguimiento.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/seguimientos_clinicos/histo" x="338" y="17479" id="pf14697948923902" referenceLink="//@navigationRule.55/@navigationCase.0/@toViewId|" inlinks="pf14697948923751" path="/ventanas/seguimientos_clinicos/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="338" y="11314" id="pf14984684490152" referenceLink="//@navigationRule.58/@fromViewId|" outlinks="pf14984684490001" inlinks="pf14984684490000" path="/ventanas/seguimientos_eventos/seguimiento.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/holter/holter" id="pf14984699152185" referenceLink="//@navigationRule.59/@navigationCase.0/@toViewId|" inlinks="pf14984699152183" path="/ventanas/holter/holter.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/holter/histo" id="pf14984699152186" referenceLink="//@navigationRule.60/@navigationCase.0/@toViewId|" inlinks="pf14984699152184" path="/ventanas/holter/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/regevext/regevext" id="pf15126392991872" referenceLink="//@navigationRule.61/@navigationCase.0/@toViewId|" inlinks="pf15126392991870" path="/ventanas/regevext/regevext.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/regevext/histo" id="pf15126392991873" referenceLink="//@navigationRule.62/@navigationCase.0/@toViewId|" inlinks="pf15126392991871" path="/ventanas/regevext/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/pacientes/complicaciones/histo" id="pf15306054204533" referenceLink="//@navigationRule.64/@navigationCase.0/@toViewId|" inlinks="pf15306054204531" path="/ventanas/pacientes/complicaciones/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/pacientes/complicaciones/complicacion" id="pf15306054326405" referenceLink="//@navigationRule.63/@navigationCase.0/@toViewId|" inlinks="pf15306054326404" path="/ventanas/pacientes/complicaciones/complicacion.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/protocolos/sincope/protocolo_sincope" id="pf15320696859684" referenceLink="//@navigationRule.65/@navigationCase.0/@toViewId|" inlinks="pf15320696859682" path="/ventanas/protocolos/sincope/protocolo_sincope.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/protocolos/histo" id="pf15320696859685" referenceLink="//@navigationRule.66/@navigationCase.0/@toViewId|" inlinks="pf15320696859683" path="/ventanas/protocolos/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test_ortostatico/test" id="pf15324238252962" referenceLink="//@navigationRule.69/@navigationCase.0/@toViewId|" inlinks="pf15324238252960" path="/ventanas/test_ortostatismo/test.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/test_ortostatico/histo" id="pf15324238252963" referenceLink="//@navigationRule.68/@navigationCase.0/@toViewId|" inlinks="pf15324238252961" path="/ventanas/test_ortostatismo/histo.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ventanas/administracion/recalls" id="pf15483447902357" referenceLink="//@navigationRule.69/@navigationCase.0/@toViewId|" inlinks="pf15483447902356" path="/ventanas/administracion/recalls.jsp"/>
+  <links id="pf13528018813011" target="pf135280188130134" source="pf13528018813010" outcome="irIndex"/>
+  <links id="pf13528018813012" target="pf135280188130136" source="pf13528018813010" outcome="irConsultaPacientes"/>
+  <links id="pf13528018813013" target="pf135280188130137" source="pf13528018813010" outcome="irNuevoPaciente"/>
+  <links id="pf13528018813014" target="pf135280188130138" source="pf13528018813010" outcome="irCardioversion"/>
+  <links id="pf13528018813015" target="pf135280188130140" source="pf13528018813010" outcome="irDesfibriladores"/>
+  <links id="pf13528018813016" target="pf135280188130142" source="pf13528018813010" outcome="irEef"/>
+  <links id="pf13528018813017" target="pf135280188130143" source="pf13528018813010" outcome="irMaestras"/>
+  <links id="pf13528018813018" target="pf135280188130144" source="pf13528018813010" outcome="irAuditoria"/>
+  <links id="pf13528018813019" target="pf135280188130145" source="pf13528018813010" outcome="irAccesos"/>
+  <links id="pf135280188130110" target="pf135280188130146" source="pf13528018813010" outcome="irDispositivos"/>
+  <links id="pf135280188130111" target="pf135280188130147" source="pf13528018813010" outcome="irHistoCardioversion"/>
+  <links id="pf135280188130112" target="pf135280188130148" source="pf13528018813010" outcome="irBuscarEstudios"/>
+  <links id="pf135280188130113" target="pf135280188130149" source="pf13528018813010" outcome="irLE"/>
+  <links id="pf135280188130114" target="pf135280188130150" source="pf13528018813010" outcome="irHistoDesfi"/>
+  <links id="pf135280188130115" target="pf135280188130151" source="pf13528018813010" outcome="irHistoTest"/>
+  <links id="pf135280188130116" target="pf135280188131752" source="pf13528018813010" outcome="irFle"/>
+  <links id="pf135280188130117" target="pf135280188131753" source="pf13528018813010" outcome="irEpi"/>
+  <links id="pf135280188130118" target="pf135280188131754" source="pf13528018813010" outcome="irATP"/>
+  <links id="pf135280188130119" target="pf135280188131755" source="pf13528018813010" outcome="irEnf"/>
+  <links id="pf135280188130120" target="pf135280188131756" source="pf13528018813010" outcome="irNuevoLE"/>
+  <links id="pf135280188130121" target="pf135280188131757" source="pf13528018813010" outcome="irHistoEnf"/>
+  <links id="pf135280188130122" target="pf135280188131758" source="pf13528018813010" outcome="irEstadisticasm"/>
+  <links id="pf135280188130123" target="pf135280188131759" source="pf13528018813010" outcome="irEstadisticasano"/>
+  <links id="pf135280188130124" target="pf135280188131760" source="pf13528018813010" outcome="irAnual"/>
+  <links id="pf135280188130125" target="pf135280188131761" source="pf13528018813010" outcome="irTimeout"/>
+  <links id="pf135280188130126" target="pf135280188131762" source="pf13528018813010" outcome="irConsultas"/>
+  <links id="pf135280188130127" target="pf135280188131763" source="pf13528018813010" outcome="irMesa"/>
+  <links id="pf135280188130128" target="pf135280188131765" source="pf13528018813010" outcome="irRegistrador"/>
+  <links id="pf135280188130129" target="pf135280188131767" source="pf13528018813010" outcome="irHistoMesa"/>
+  <links id="pf135280188130130" target="pf135280188131765" source="pf13528018813010" outcome="irRegistradorEventos"/>
+  <links id="pf135280188130131" target="pf135280188131768" source="pf13528018813010" outcome="irHistoRegistrador"/>
+  <links id="pf135280206476469" target="pf135280206476471" source="pf13528018813010" outcome="irMarcapasos"/>
+  <links id="pf135280206476470" target="pf135280206476472" source="pf13528018813010" outcome="irHistoMarca"/>
+  <links id="pf13578094100162" target="pf13578094100163" source="pf13528018813010" outcome="irImplantes"/>
+  <links id="pf13618664296250" target="pf13618664296251" source="pf13528018813010" outcome="irHistoImplantes"/>
+  <links id="pf13632592470590" target="pf13632592470592" source="pf13528018813010" outcome="irSeguimientos"/>
+  <links id="pf13632592470591" target="pf13632592470593" source="pf13528018813010" outcome="irHistoSeguimientos"/>
+  <links id="pf13651474926590" target="pf13651474926591" source="pf13528018813010" outcome="irExportacion"/>
+  <links id="pf13679170085130" target="pf135280188130137" source="pf13578094100163" outcome="menuprincipal"/>
+  <links id="pf13679171383831" target="pf135280188130137" source="pf13632592470592" outcome="menuprincipal"/>
+  <links id="pf13715547913120" target="pf13680026842201" source="pf13528018813010" outcome="irMenuPaciente"/>
+  <links id="pf13728519862360" target="pf13728519862362" source="pf13528018813010" outcome="irMaterial"/>
+  <links id="pf13728519862361" target="pf13728519862363" source="pf13528018813010" outcome="irEstadisticasGeneral"/>
+  <links id="pf13747640524810" target="pf13747640524811" source="pf13528018813010" outcome="irEstadisticasBasicas"/>
+  <links id="pf13986872932810" target="pf13986872932811" source="pf13528018813010" outcome="irCitas"/>
+  <links id="pf14055888657650" target="pf14055888657651" source="pf13528018813010" outcome="irPerfilUsuario"/>
+  <links id="pf14139753149170" target="pf14139753149331" source="pf13528018813010" outcome="irIntegraciones"/>
+  <links id="pf14697033624533" target="pf14697033624534" source="pf13528018813010" outcome="irSeguimientosClinicos"/>
+  <links id="pf14697948923751" target="pf14697948923902" source="pf13528018813010" outcome="irHistoSegClin"/>
+  <links id="pf14724779261400" target="pf135280188130137" source="pf14697033624534" outcome="menuprincipal"/>
+  <links id="pf14984684490000" target="pf14984684490152" source="pf13528018813010" outcome="irSeguimientosRegEventos"/>
+  <links id="pf14984684490001" target="pf135280188130137" source="pf14984684490152" outcome="menuprincipal"/>
+  <links id="pf135280188130135" target="pf135280188130134" source="pf135280188130134" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf135280188130141" target="pf135280188130140" source="pf135280188130140" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf135280188130139" target="pf135280188130138" source="pf135280188130138" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf135280188131764" target="pf135280188131763" source="pf135280188131763" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf135280188131766" target="pf135280188131765" source="pf135280188131765" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13679187130862" target="pf13578094100163" source="pf13578094100163" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13679187360063" target="pf13632592470592" source="pf13632592470592" outcome="recarga">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14984699152183" target="pf14984699152185" source="pf13528018813010" outcome="irHolter"/>
+  <links id="pf14984699152184" target="pf14984699152186" source="pf13528018813010" outcome="irHistoHolter"/>
+  <links id="pf15126392991870" target="pf15126392991872" source="pf13528018813010" outcome="irRegEvExt"/>
+  <links id="pf15126392991871" target="pf15126392991873" source="pf13528018813010" outcome="irHistoRegEvExt"/>
+  <links id="pf15306054204531" target="pf15306054204533" source="pf13528018813010" outcome="irHistoComplicaciones"/>
+  <links id="pf15306054326404" target="pf15306054326405" source="pf13528018813010" outcome="irComplicaciones"/>
+  <links id="pf15320696859682" target="pf15320696859684" source="pf13528018813010" outcome="irProtocoloSincope"/>
+  <links id="pf15320696859683" target="pf15320696859685" source="pf13528018813010" outcome="irHistoProtocolos"/>
+  <links id="pf15324238252960" target="pf15324238252962" source="pf13528018813010" outcome="irTestOrto"/>
+  <links id="pf15324238252961" target="pf15324238252963" source="pf13528018813010" outcome="irHistoTestOrto"/>
+  <links id="pf15483447902356" target="pf15483447902357" source="pf13528018813010" outcome="irRecalls"/>
+</pageflow:Pageflow>

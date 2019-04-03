@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:jenia="http://www.jenia.org/jsf/popup"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:s="http://myfaces.apache.org/sandbox">
+	
+	
+				
+	<h:form id="formNutricionista">		
+	
+		<t:fieldset>
+			<h:panelGrid columns="2" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop" id="gridPsicologa">
+				<h:panelGrid columns="2" >
+					<h:outputLabel value="#{ms.general_fecha}" style="font-weight: bold;" />
+					<br />
+					<h:panelGrid columns="2" style="border-top: solid 1px;border-color: black;">
+						<rich:calendar  datePattern="dd/MM/yyyy HH:mm" inputSize="15"
+										showWeeksBar="false" direction="bottom-left"
+										value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.fechaNutricion}" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:panelGrid>
+
+			<t:fieldset>
+				<h:panelGrid columns="5" columnClasses="alignTop,alignTop,alignTop,alignTop,alignTop" id="gridPsicologa3">
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_escalaDietetica}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.escalaDietetica}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_perimetroAbdominal}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.perimetroAbdominal}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_perimetroCintura}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.perimetroCintura}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_indiceCinturaCadera}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.indiceCinturaCadera}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_cinturaCadera}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.cinturaCadera}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_indiceCinturaTalla}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.indiceCinturaTalla}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_masaMuscularEsqueletico}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.masaMuscularEsqueletico}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_masaGrasaCorporal}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.masaGrasaCorporal}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_porcentajeGrasaCorporal}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.porcentajeGrasaCorporal}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+					<h:panelGrid>
+						<h:outputLabel value="#{ms.reacar_txt_relacionCinturaCadera}" style="font-weight: bold;" />
+						<h:panelGrid style="border-top: solid 1px;border-color: black;" columns="2">
+							<h:inputText value="#{controlRehabilitacionCardiaca.rehabilitacionCardiacaDTO.nutricionistaDTO.relacionCinturaCadera}"/>																
+						</h:panelGrid>	
+					</h:panelGrid>
+				</h:panelGrid>
+			</t:fieldset>	
+		</t:fieldset>
+	</h:form>
+</ui:composition>

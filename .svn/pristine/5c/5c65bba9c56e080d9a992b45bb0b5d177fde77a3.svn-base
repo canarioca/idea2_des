@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#*" PATH="/*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:0" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irIndex::#index.jsp" NAME="output"
+    PATH="/index.jsp" TARGET="rules:#index.jsp" TITLE="irIndex" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.jsp" PATH="/index.jsp"
+  SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.jsp:0" NAME="item" PATH="/index.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="recarga::#index.jsp" NAME="output"
+    PATH="/index.jsp" TARGET="rules:#index.jsp" TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:1" PATH="/*" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:1" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irConsultaPacientes::#ventanas#pacientes#consultaPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/consultaPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#consultaPaciente.jsp"
+    TITLE="irConsultaPacientes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:2" PATH="/*" SHAPE="256,257,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:2" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irNuevoPaciente::#ventanas#pacientes#nuevoPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/nuevoPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+    TITLE="irNuevoPaciente" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:3" PATH="/*" SHAPE="32,865,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:3" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irMenuPaciente::#ventanas#pacientes#menuPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/menuPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#menuPaciente.jsp"
+    TITLE="irMenuPaciente" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:4" PATH="/*" SHAPE="32,977,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:4" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irCardioversion::#ventanas#cardioversion#cardioversion.jsp"
+    NAME="output" PATH="/ventanas/cardioversion/cardioversion.jsp"
+    TARGET="rules:#ventanas#cardioversion#cardioversion.jsp"
+    TITLE="irCardioversion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:5" PATH="/*" SHAPE="32,1089,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:5" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irDesfibriladores::#ventanas#desfibriladores#desfibriladores.jsp"
+    NAME="output" PATH="/ventanas/desfibriladores/desfibriladores.jsp"
+    TARGET="rules:#ventanas#desfibriladores#desfibriladores.jsp"
+    TITLE="irDesfibriladores" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:6" PATH="/*" SHAPE="32,1201,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:6" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irEef::#ventanas#eef#eef.jsp" NAME="output"
+    PATH="/ventanas/eef/eef.jsp" TARGET="rules:#ventanas#eef#eef.jsp"
+    TITLE="irEef" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:7" PATH="/*" SHAPE="32,1313,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:7" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irMaestras::#ventanas#administracion#maestras.jsp" NAME="output"
+    PATH="/ventanas/administracion/maestras.jsp"
+    TARGET="rules:#ventanas#administracion#maestras.jsp"
+    TITLE="irMaestras" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:8" PATH="/*" SHAPE="32,1425,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:8" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irAuditoria::#ventanas#administracion#audita.jsp" NAME="output"
+    PATH="/ventanas/administracion/audita.jsp"
+    TARGET="rules:#ventanas#administracion#audita.jsp"
+    TITLE="irAuditoria" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:9" PATH="/*" SHAPE="32,1537,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:9" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irAccesos::#ventanas#administracion#acceso.jsp" NAME="output"
+    PATH="/ventanas/administracion/acceso.jsp"
+    TARGET="rules:#ventanas#administracion#acceso.jsp" TITLE="irAccesos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:10" PATH="/*" SHAPE="32,1649,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:10" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irDispositivos::#ventanas#eef#dispositivos#generalDispositivos.jsp"
+    NAME="output"
+    PATH="/ventanas/eef/dispositivos/generalDispositivos.jsp"
+    TARGET="rules:#ventanas#eef#dispositivos#generalDispositivos.jsp"
+    TITLE="irDispositivos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:11" PATH="/*" SHAPE="32,1761,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:11" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoCardioversion::#ventanas#cardioversion#histo.jsp"
+    NAME="output" PATH="/ventanas/cardioversion/histo.jsp"
+    TARGET="rules:#ventanas#cardioversion#histo.jsp"
+    TITLE="irHistoCardioversion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:12" PATH="/*" SHAPE="32,1873,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:12" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irBuscarEstudios::#ventanas#eef#histo.jsp"
+    NAME="output" PATH="/ventanas/eef/histo.jsp"
+    TARGET="rules:#ventanas#eef#histo.jsp" TITLE="irBuscarEstudios" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:13" PATH="/*" SHAPE="32,1985,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:13" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irLE::#ventanas#espera#lespera.jsp"
+    NAME="output" PATH="/ventanas/espera/lespera.jsp"
+    TARGET="rules:#ventanas#espera#lespera.jsp" TITLE="irLE" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:14" PATH="/*" SHAPE="32,2097,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:14" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoDesfi::#ventanas#desfibriladores#histo.jsp" NAME="output"
+    PATH="/ventanas/desfibriladores/histo.jsp"
+    TARGET="rules:#ventanas#desfibriladores#histo.jsp"
+    TITLE="irHistoDesfi" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#desfibriladores#desfibriladores.jsp"
+  PATH="/ventanas/desfibriladores/desfibriladores.jsp"
+  SHAPE="256,1105,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#ventanas#desfibriladores#desfibriladores.jsp:0"
+   NAME="item" PATH="/ventanas/desfibriladores/desfibriladores.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="recarga::#ventanas#desfibriladores#desfibriladores.jsp"
+    NAME="output" PATH="/ventanas/desfibriladores/desfibriladores.jsp"
+    TARGET="rules:#ventanas#desfibriladores#desfibriladores.jsp"
+    TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#cardioversion#cardioversion.jsp"
+  PATH="/ventanas/cardioversion/cardioversion.jsp" SHAPE="256,993,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ventanas#cardioversion#cardioversion.jsp:0"
+   NAME="item" PATH="/ventanas/cardioversion/cardioversion.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="recarga::#ventanas#cardioversion#cardioversion.jsp"
+    NAME="output" PATH="/ventanas/cardioversion/cardioversion.jsp"
+    TARGET="rules:#ventanas#cardioversion#cardioversion.jsp"
+    TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:15" PATH="/*" SHAPE="32,2209,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:15" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irHistoTest::#ventanas#test#histo.jsp"
+    NAME="output" PATH="/ventanas/test/histo.jsp"
+    TARGET="rules:#ventanas#test#histo.jsp" TITLE="irHistoTest" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:16" PATH="/*" SHAPE="32,2321,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:16" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irFle::#ventanas#test#flecainida.jsp"
+    NAME="output" PATH="/ventanas/test/flecainida.jsp"
+    TARGET="rules:#ventanas#test#flecainida.jsp" TITLE="irFle" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:17" PATH="/*" SHAPE="32,2433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:17" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irEpi::#ventanas#test#epinefrina.jsp"
+    NAME="output" PATH="/ventanas/test/epinefrina.jsp"
+    TARGET="rules:#ventanas#test#epinefrina.jsp" TITLE="irEpi" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:18" PATH="/*" SHAPE="32,2545,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:18" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irATP::#ventanas#test#atp.jsp" NAME="output"
+    PATH="/ventanas/test/atp.jsp" TARGET="rules:#ventanas#test#atp.jsp"
+    TITLE="irATP" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:19" PATH="/*" SHAPE="32,2657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:19" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irEnf::#ventanas#eef#enfermeria.jsp"
+    NAME="output" PATH="/ventanas/eef/enfermeria.jsp"
+    TARGET="rules:#ventanas#eef#enfermeria.jsp" TITLE="irEnf" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:20" PATH="/*" SHAPE="32,2769,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:20" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irNuevoLE::#ventanas#espera#nuevo.jsp"
+    NAME="output" PATH="/ventanas/espera/nuevo.jsp"
+    TARGET="rules:#ventanas#espera#nuevo.jsp" TITLE="irNuevoLE" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:21" PATH="/*" SHAPE="32,2881,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:21" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irHistoEnf::#ventanas#eef#histoenf.jsp"
+    NAME="output" PATH="/ventanas/eef/histoenf.jsp"
+    TARGET="rules:#ventanas#eef#histoenf.jsp" TITLE="irHistoEnf" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:22" PATH="/*" SHAPE="32,2993,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:22" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irEstadisticasm::#ventanas#administracion#estadisticasm.jsp"
+    NAME="output" PATH="/ventanas/administracion/estadisticasm.jsp"
+    TARGET="rules:#ventanas#administracion#estadisticasm.jsp"
+    TITLE="irEstadisticasm" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:23" PATH="/*" SHAPE="32,3105,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:23" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irEstadisticasano::#ventanas#administracion#estadisticasano.jsp"
+    NAME="output" PATH="/ventanas/administracion/estadisticasano.jsp"
+    TARGET="rules:#ventanas#administracion#estadisticasano.jsp"
+    TITLE="irEstadisticasano" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:24" PATH="/*" SHAPE="32,3217,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:24" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irEstadisticasGeneral::#ventanas#administracion#estadisticasgen.jsp"
+    NAME="output" PATH="/ventanas/administracion/estadisticasgen.jsp"
+    TARGET="rules:#ventanas#administracion#estadisticasgen.jsp"
+    TITLE="irEstadisticasGeneral" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:25" PATH="/*" SHAPE="32,3329,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:25" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irEstadisticasBasicas::#ventanas#administracion#estadisticasbasicas.jsp"
+    NAME="output"
+    PATH="/ventanas/administracion/estadisticasbasicas.jsp"
+    TARGET="rules:#ventanas#administracion#estadisticasbasicas.jsp"
+    TITLE="irEstadisticasBasicas" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:26" PATH="/*" SHAPE="32,3441,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:26" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irAnual::#ventanas#administracion#anual.jsp"
+    NAME="output" PATH="/ventanas/administracion/anual.jsp"
+    TARGET="rules:#ventanas#administracion#anual.jsp" TITLE="irAnual" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:27" PATH="/*" SHAPE="32,3553,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:27" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irTimeout::#timeout.jsp" NAME="output"
+    PATH="/timeout.jsp" TARGET="rules:#timeout.jsp" TITLE="irTimeout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:28" PATH="/*" SHAPE="32,3665,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:28" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irConsultas::#ventanas#administracion#consultas.jsp"
+    NAME="output" PATH="/ventanas/administracion/consultas.jsp"
+    TARGET="rules:#ventanas#administracion#consultas.jsp"
+    TITLE="irConsultas" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:29" PATH="/*" SHAPE="32,3777,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:29" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irMesa::#ventanas#basculante#mesas.jsp"
+    NAME="output" PATH="/ventanas/basculante/mesas.jsp"
+    TARGET="rules:#ventanas#basculante#mesas.jsp" TITLE="irMesa" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:30" PATH="/*" SHAPE="32,3889,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:30" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irRegistrador::#ventanas#eventos#evento.jsp"
+    NAME="output" PATH="/ventanas/eventos/evento.jsp"
+    TARGET="rules:#ventanas#eventos#evento.jsp" TITLE="irRegistrador" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#basculante#mesas.jsp"
+  PATH="/ventanas/basculante/mesas.jsp" SHAPE="256,3793,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ventanas#basculante#mesas.jsp:0" NAME="item"
+   PATH="/ventanas/basculante/mesas.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="recarga::#ventanas#basculante#mesas.jsp"
+    NAME="output" PATH="/ventanas/basculante/mesas.jsp"
+    TARGET="rules:#ventanas#basculante#mesas.jsp" TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:31" PATH="/*" SHAPE="32,4113,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:31" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irHistoMesa::#ventanas#basculante#histo.jsp"
+    NAME="output" PATH="/ventanas/basculante/histo.jsp"
+    TARGET="rules:#ventanas#basculante#histo.jsp" TITLE="irHistoMesa" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:32" PATH="/*" SHAPE="32,4001,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:32" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irRegistradorEventos::#ventanas#eventos#evento.jsp"
+    NAME="output" PATH="/ventanas/eventos/evento.jsp"
+    TARGET="rules:#ventanas#eventos#evento.jsp"
+    TITLE="irRegistradorEventos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#eventos#evento.jsp"
+  PATH="/ventanas/eventos/evento.jsp" SHAPE="272,3905,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ventanas#eventos#evento.jsp:0" NAME="item"
+   PATH="/ventanas/eventos/evento.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="recarga::#ventanas#eventos#evento.jsp"
+    NAME="output" PATH="/ventanas/eventos/evento.jsp"
+    TARGET="rules:#ventanas#eventos#evento.jsp" TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:33" PATH="/*" SHAPE="32,4225,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:33" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoRegistrador::#ventanas#eventos#histo.jsp" NAME="output"
+    PATH="/ventanas/eventos/histo.jsp"
+    TARGET="rules:#ventanas#eventos#histo.jsp"
+    TITLE="irHistoRegistrador" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:34" PATH="/*" SHAPE="32,4337,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:34" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irMarcapasos::#ventanas#marcapasos#marcapasos.jsp" NAME="output"
+    PATH="/ventanas/marcapasos/marcapasos.jsp"
+    TARGET="rules:#ventanas#marcapasos#marcapasos.jsp"
+    TITLE="irMarcapasos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:35" PATH="/*" SHAPE="32,4449,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:35" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoMarca::#ventanas#marcapasos#histo.jsp" NAME="output"
+    PATH="/ventanas/marcapasos/histo.jsp"
+    TARGET="rules:#ventanas#marcapasos#histo.jsp" TITLE="irHistoMarca" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:36" PATH="/*" SHAPE="32,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:36" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irImplantes::#ventanas#implantes#implantes.jsp" NAME="output"
+    PATH="/ventanas/implantes/implantes.jsp"
+    TARGET="rules:#ventanas#implantes#implantes.jsp" TITLE="irImplantes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:37" PATH="/*" SHAPE="32,4561,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:37" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoImplantes::#ventanas#implantes#histo.jsp" NAME="output"
+    PATH="/ventanas/implantes/histo.jsp"
+    TARGET="rules:#ventanas#implantes#histo.jsp"
+    TITLE="irHistoImplantes" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#implantes#implantes.jsp"
+  PATH="/ventanas/implantes/implantes.jsp" SHAPE="256,369,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ventanas#implantes#implantes.jsp:0"
+   NAME="item" PATH="/ventanas/implantes/implantes.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="menuprincipal::#ventanas#pacientes#nuevoPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/nuevoPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+    TITLE="menuprincipal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#ventanas#implantes#implantes.jsp:1"
+   NAME="item1" PATH="/ventanas/implantes/implantes.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="recarga::#ventanas#implantes#implantes.jsp"
+    NAME="output" PATH="/ventanas/implantes/implantes.jsp"
+    TARGET="rules:#ventanas#implantes#implantes.jsp" TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:38" PATH="/*" SHAPE="32,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:38" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irSeguimientos::#ventanas#seguimientos#seguimientos.jsp"
+    NAME="output" PATH="/ventanas/seguimientos/seguimientos.jsp"
+    TARGET="rules:#ventanas#seguimientos#seguimientos.jsp"
+    TITLE="irSeguimientos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:39" PATH="/*" SHAPE="32,4673,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:39" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoSeguimientos::#ventanas#seguimientos#histo.jsp"
+    NAME="output" PATH="/ventanas/seguimientos/histo.jsp"
+    TARGET="rules:#ventanas#seguimientos#histo.jsp"
+    TITLE="irHistoSeguimientos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#seguimientos#seguimientos.jsp"
+  PATH="/ventanas/seguimientos/seguimientos.jsp" SHAPE="256,513,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ventanas#seguimientos#seguimientos.jsp:0"
+   NAME="item" PATH="/ventanas/seguimientos/seguimientos.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="menuprincipal::#ventanas#pacientes#nuevoPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/nuevoPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+    TITLE="menuprincipal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#ventanas#seguimientos#seguimientos.jsp:1"
+   NAME="item1" PATH="/ventanas/seguimientos/seguimientos.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="recarga::#ventanas#seguimientos#seguimientos.jsp" NAME="output"
+    PATH="/ventanas/seguimientos/seguimientos.jsp"
+    TARGET="rules:#ventanas#seguimientos#seguimientos.jsp"
+    TITLE="recarga" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:40" PATH="/*" SHAPE="32,4785,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:40" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irExportacion::#ventanas#administracion#exportacion.jsp"
+    NAME="output" PATH="/ventanas/administracion/exportacion.jsp"
+    TARGET="rules:#ventanas#administracion#exportacion.jsp"
+    TITLE="irExportacion" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:41" PATH="/*" SHAPE="32,4897,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:41" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irMaterial::#ventanas#administracion#material.jsp" NAME="output"
+    PATH="/ventanas/administracion/material.jsp"
+    TARGET="rules:#ventanas#administracion#material.jsp"
+    TITLE="irMaterial" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:42" PATH="/*" SHAPE="32,5009,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:42" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irCitas::#ventanas#administracion#citas.jsp"
+    NAME="output" PATH="/ventanas/administracion/citas.jsp"
+    TARGET="rules:#ventanas#administracion#citas.jsp" TITLE="irCitas" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:43" PATH="/*" SHAPE="32,5121,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:43" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irPerfilUsuario::#ventanas#personal#perfil.jsp" NAME="output"
+    PATH="/ventanas/personal/perfil.jsp"
+    TARGET="rules:#ventanas#personal#perfil.jsp" TITLE="irPerfilUsuario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:44" PATH="/*" SHAPE="32,5233,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:44" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irIntegraciones::#ventanas#integraciones#gestion_integraciones.jsp"
+    NAME="output"
+    PATH="/ventanas/integraciones/gestion_integraciones.jsp"
+    TARGET="rules:#ventanas#integraciones#gestion_integraciones.jsp"
+    TITLE="irIntegraciones" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:45" PATH="/*" SHAPE="32,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:45" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irSeguimientosClinicos::#ventanas#seguimientos_clinicos#seguimiento.jsp"
+    NAME="output" PATH="/ventanas/seguimientos_clinicos/seguimiento.jsp"
+    TARGET="rules:#ventanas#seguimientos_clinicos#seguimiento.jsp"
+    TITLE="irSeguimientosClinicos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:46" PATH="/*" SHAPE="32,5345,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:46" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoSegClin::#ventanas#seguimientos_clinicos#histo.jsp"
+    NAME="output" PATH="/ventanas/seguimientos_clinicos/histo.jsp"
+    TARGET="rules:#ventanas#seguimientos_clinicos#histo.jsp"
+    TITLE="irHistoSegClin" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#seguimientos_clinicos#seguimiento.jsp"
+  PATH="/ventanas/seguimientos_clinicos/seguimiento.jsp"
+  SHAPE="256,657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#ventanas#seguimientos_clinicos#seguimiento.jsp:0"
+   NAME="item" PATH="/ventanas/seguimientos_clinicos/seguimiento.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="menuprincipal::#ventanas#pacientes#nuevoPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/nuevoPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+    TITLE="menuprincipal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:47" PATH="/*" SHAPE="32,753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:47" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irSeguimientosRegEventos::#ventanas#seguimientos_eventos#seguimiento.jsp"
+    NAME="output" PATH="/ventanas/seguimientos_eventos/seguimiento.jsp"
+    TARGET="rules:#ventanas#seguimientos_eventos#seguimiento.jsp"
+    TITLE="irSeguimientosRegEventos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#seguimientos_eventos#seguimiento.jsp"
+  PATH="/ventanas/seguimientos_eventos/seguimiento.jsp"
+  SHAPE="256,769,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#ventanas#seguimientos_eventos#seguimiento.jsp:0"
+   NAME="item" PATH="/ventanas/seguimientos_eventos/seguimiento.jsp" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="menuprincipal::#ventanas#pacientes#nuevoPaciente.jsp"
+    NAME="output" PATH="/ventanas/pacientes/nuevoPaciente.jsp"
+    TARGET="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+    TITLE="menuprincipal" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:48" PATH="/*" SHAPE="32,5457,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:48" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irHolter::#ventanas#holter#holter.jsp"
+    NAME="output" PATH="/ventanas/holter/holter.jsp"
+    TARGET="rules:#ventanas#holter#holter.jsp" TITLE="irHolter" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:49" PATH="/*" SHAPE="32,5569,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:49" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irHistoHolter::#ventanas#holter#histo.jsp"
+    NAME="output" PATH="/ventanas/holter/histo.jsp"
+    TARGET="rules:#ventanas#holter#histo.jsp" TITLE="irHistoHolter" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:50" PATH="/*" SHAPE="32,5681,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:50" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="irRegEvExt::#ventanas#regevext#regevext.jsp"
+    NAME="output" PATH="/ventanas/regevext/regevext.jsp"
+    TARGET="rules:#ventanas#regevext#regevext.jsp" TITLE="irRegEvExt" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:51" PATH="/*" SHAPE="32,5793,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:51" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoRegEvExt::#ventanas#regevext#histo.jsp" NAME="output"
+    PATH="/ventanas/regevext/histo.jsp"
+    TARGET="rules:#ventanas#regevext#histo.jsp" TITLE="irHistoRegEvExt" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:52" PATH="/*" SHAPE="32,5905,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:52" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irComplicaciones::#ventanas#pacientes#complicaciones#complicacion.jsp"
+    NAME="output"
+    PATH="/ventanas/pacientes/complicaciones/complicacion.jsp"
+    TARGET="rules:#ventanas#pacientes#complicaciones#complicacion.jsp"
+    TITLE="irComplicaciones" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:53" PATH="/*" SHAPE="32,6017,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:53" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoComplicaciones::#ventanas#pacientes#complicaciones#histo.jsp"
+    NAME="output" PATH="/ventanas/pacientes/complicaciones/histo.jsp"
+    TARGET="rules:#ventanas#pacientes#complicaciones#histo.jsp"
+    TITLE="irHistoComplicaciones" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:54" PATH="/*" SHAPE="32,6129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:54" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irProtocoloSincope::#ventanas#protocolos#sincope#protocolo_sincope.jsp"
+    NAME="output"
+    PATH="/ventanas/protocolos/sincope/protocolo_sincope.jsp"
+    TARGET="rules:#ventanas#protocolos#sincope#protocolo_sincope.jsp"
+    TITLE="irProtocoloSincope" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:55" PATH="/*" SHAPE="32,6241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:55" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoProtocolos::#ventanas#protocolos#histo.jsp" NAME="output"
+    PATH="/ventanas/protocolos/histo.jsp"
+    TARGET="rules:#ventanas#protocolos#histo.jsp"
+    TITLE="irHistoProtocolos" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:56" PATH="/*" SHAPE="32,6353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:56" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irTestOrto::#ventanas#test_ortostatismo#test.jsp" NAME="output"
+    PATH="/ventanas/test_ortostatismo/test.jsp"
+    TARGET="rules:#ventanas#test_ortostatismo#test.jsp"
+    TITLE="irTestOrto" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:57" PATH="/*" SHAPE="32,6465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:57" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irHistoTestOrto::#ventanas#test_ortostatismo#histo.jsp"
+    NAME="output" PATH="/ventanas/test_ortostatismo/histo.jsp"
+    TARGET="rules:#ventanas#test_ortostatismo#histo.jsp"
+    TITLE="irHistoTestOrto" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:58" PATH="/*" SHAPE="32,6577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:58" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irRecalls::#ventanas#administracion#recalls.jsp" NAME="output"
+    PATH="/ventanas/administracion/recalls.jsp"
+    TARGET="rules:#ventanas#administracion#recalls.jsp"
+    TITLE="irRecalls" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#*:59" PATH="/*" SHAPE="32,6689,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#*:59" NAME="item" PATH="/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="irRehabilitacionCardiaca::#ventanas#rehabilitacionCardiaca#rehabilitacionCardiaca.jsp"
+    NAME="output"
+    PATH="/ventanas/rehabilitacionCardiaca/rehabilitacionCardiaca.jsp"
+    TARGET="rules:#ventanas#rehabilitacionCardiaca#rehabilitacionCardiaca.jsp"
+    TITLE="irRehabilitacionCardiaca" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ventanas#pacientes#nuevoPaciente.jsp"
+  PATH="/ventanas/pacientes/nuevoPaciente.jsp" SHAPE="528,241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#eef#histoenf.jsp"
+  PATH="/ventanas/eef/histoenf.jsp" SHAPE="240,2897,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#estadisticasgen.jsp"
+  PATH="/ventanas/administracion/estadisticasgen.jsp"
+  SHAPE="240,3233,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#pacientes#menuPaciente.jsp"
+  PATH="/ventanas/pacientes/menuPaciente.jsp" SHAPE="240,881,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#eef#enfermeria.jsp"
+  PATH="/ventanas/eef/enfermeria.jsp" SHAPE="240,2673,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#integraciones#gestion_integraciones.jsp"
+  PATH="/ventanas/integraciones/gestion_integraciones.jsp"
+  SHAPE="240,5249,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#estadisticasano.jsp"
+  PATH="/ventanas/administracion/estadisticasano.jsp"
+  SHAPE="240,3121,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#administracion#estadisticasbasicas.jsp"
+  PATH="/ventanas/administracion/estadisticasbasicas.jsp"
+  SHAPE="240,3345,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test_ortostatismo#histo.jsp"
+  PATH="/ventanas/test_ortostatismo/histo.jsp" SHAPE="240,6481,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#seguimientos#histo.jsp"
+  PATH="/ventanas/seguimientos/histo.jsp" SHAPE="240,4689,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#holter#histo.jsp"
+  PATH="/ventanas/holter/histo.jsp" SHAPE="240,5585,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#anual.jsp"
+  PATH="/ventanas/administracion/anual.jsp" SHAPE="240,3457,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#seguimientos_clinicos#histo.jsp"
+  PATH="/ventanas/seguimientos_clinicos/histo.jsp" SHAPE="240,5361,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test#atp.jsp"
+  PATH="/ventanas/test/atp.jsp" SHAPE="240,2561,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#protocolos#sincope#protocolo_sincope.jsp"
+  PATH="/ventanas/protocolos/sincope/protocolo_sincope.jsp"
+  SHAPE="240,6145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#protocolos#histo.jsp"
+  PATH="/ventanas/protocolos/histo.jsp" SHAPE="240,6257,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test#epinefrina.jsp"
+  PATH="/ventanas/test/epinefrina.jsp" SHAPE="240,2449,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#timeout.jsp" PATH="/timeout.jsp"
+  SHAPE="240,3569,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#pacientes#consultaPaciente.jsp"
+  PATH="/ventanas/pacientes/consultaPaciente.jsp" SHAPE="240,145,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#cardioversion#histo.jsp"
+  PATH="/ventanas/cardioversion/histo.jsp" SHAPE="240,1777,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test#flecainida.jsp"
+  PATH="/ventanas/test/flecainida.jsp" SHAPE="240,2337,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#audita.jsp"
+  PATH="/ventanas/administracion/audita.jsp" SHAPE="240,1441,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#marcapasos#marcapasos.jsp"
+  PATH="/ventanas/marcapasos/marcapasos.jsp" SHAPE="240,4353,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#marcapasos#histo.jsp"
+  PATH="/ventanas/marcapasos/histo.jsp" SHAPE="240,4465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#pacientes#complicaciones#histo.jsp"
+  PATH="/ventanas/pacientes/complicaciones/histo.jsp"
+  SHAPE="240,6033,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#implantes#histo.jsp"
+  PATH="/ventanas/implantes/histo.jsp" SHAPE="240,4577,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#consultas.jsp"
+  PATH="/ventanas/administracion/consultas.jsp" SHAPE="240,3681,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#regevext#histo.jsp"
+  PATH="/ventanas/regevext/histo.jsp" SHAPE="240,5809,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#desfibriladores#histo.jsp"
+  PATH="/ventanas/desfibriladores/histo.jsp" SHAPE="240,2113,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#acceso.jsp"
+  PATH="/ventanas/administracion/acceso.jsp" SHAPE="240,1553,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#eventos#histo.jsp"
+  PATH="/ventanas/eventos/histo.jsp" SHAPE="240,4241,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#exportacion.jsp"
+  PATH="/ventanas/administracion/exportacion.jsp" SHAPE="240,4801,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#eef#dispositivos#generalDispositivos.jsp"
+  PATH="/ventanas/eef/dispositivos/generalDispositivos.jsp"
+  SHAPE="240,1665,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#eef#eef.jsp"
+  PATH="/ventanas/eef/eef.jsp" SHAPE="240,1217,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#material.jsp"
+  PATH="/ventanas/administracion/material.jsp" SHAPE="240,4913,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#citas.jsp"
+  PATH="/ventanas/administracion/citas.jsp" SHAPE="240,5025,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#maestras.jsp"
+  PATH="/ventanas/administracion/maestras.jsp" SHAPE="240,1329,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#estadisticasm.jsp"
+  PATH="/ventanas/administracion/estadisticasm.jsp" SHAPE="240,3009,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#administracion#recalls.jsp"
+  PATH="/ventanas/administracion/recalls.jsp" SHAPE="240,6593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#espera#nuevo.jsp"
+  PATH="/ventanas/espera/nuevo.jsp" SHAPE="240,2785,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#holter#holter.jsp"
+  PATH="/ventanas/holter/holter.jsp" SHAPE="240,5473,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#personal#perfil.jsp"
+  PATH="/ventanas/personal/perfil.jsp" SHAPE="240,5137,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test#histo.jsp"
+  PATH="/ventanas/test/histo.jsp" SHAPE="240,2225,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#pacientes#complicaciones#complicacion.jsp"
+  PATH="/ventanas/pacientes/complicaciones/complicacion.jsp"
+  SHAPE="240,5921,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#eef#histo.jsp"
+  PATH="/ventanas/eef/histo.jsp" SHAPE="240,1889,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#basculante#histo.jsp"
+  PATH="/ventanas/basculante/histo.jsp" SHAPE="240,4129,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#regevext#regevext.jsp"
+  PATH="/ventanas/regevext/regevext.jsp" SHAPE="240,5697,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#test_ortostatismo#test.jsp"
+  PATH="/ventanas/test_ortostatismo/test.jsp" SHAPE="240,6369,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM
+  NAME="rules:#ventanas#rehabilitacionCardiaca#rehabilitacionCardiaca.jsp"
+  PATH="/ventanas/rehabilitacionCardiaca/rehabilitacionCardiaca.jsp"
+  SHAPE="240,6705,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ventanas#espera#lespera.jsp"
+  PATH="/ventanas/espera/lespera.jsp" SHAPE="240,2001,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://canal.integracion.idea.sorin.com" xmlns:s0="http://canal.integracion.idea.sorin.com" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:datos="http://canal.integracion.idea.sorin.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://canal.integracion.idea.sorin.com" xmlns:datos="http://canal.integracion.idea.sorin.com">
+			<s:complexType name="Paciente">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="nuhsa" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nombre" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="apellido1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="apellido2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sexo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechanaci" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dni" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nss1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="direccion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="provincia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="poblacion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="pais" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estado" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="telefono1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="telefono2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="correo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="procedencia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hprocedencia" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="SituacionClinica">
+				<s:sequence>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="sintomas" type="datos:Sintoma"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ritmo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ritmo2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cav" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cav2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="anchuraqrs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fevi" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="funcionventricular" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nyha" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cardiopatia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="aevolucion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="revascularizacion" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="infartoprevio" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="anio" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="localizacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="arritmias" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="eef" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hta" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dislipemia" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diabetes" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tabaquismo" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ingalcoholica" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="acv" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ait" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="epoc" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sahs" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiposahs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ahi" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cpap" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="insrenal" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipoinsrenal" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="neoplasia" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiponeoplasia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="afectiroidea" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="neuromediados" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="muertesubita" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="trasplantecardiaco" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sincope" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="paradacardiaca" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fa" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="enfarterial" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ai" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ai2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="exitus" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechaexitus" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="flutter" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="alergias" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="HojaImplante">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="implantador" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="testinduccion" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="testinduccion_energia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="testinduccion_impedancia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="testinduccion_numchoques" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="prioridad" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tescopia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hllegada" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hinicio" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hfin" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hsalida" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="lugarimplante" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tanestesia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipoindicacion" type="s:int"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="primeroperador" type="datos:Personal"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="segundooperador" type="datos:Personal"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="enfermeria" type="datos:Personal"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="complicaciones" type="datos:Complicaciones"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Evolucion">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="modogen" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fbasica" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="segremoto" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mev" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mpdependiente" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iavdetectado" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iavestimulado" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iavmax" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iavmin" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="secactivacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estimfrenica" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="atp" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numatp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tefectatp" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="choques" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numchoques" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tefectchoques" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_energia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_tcarga" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_imp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="todasefectivas" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fmax" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fmin" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="valor_histeresis" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="algprevfa" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="amp_postchoque" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="durpulso_postchoque" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="frec_postchoque" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dur_postchoque" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="confchoque" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechaalta" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="medicoalta" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comp_mri" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_total" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_tsv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_tv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_fv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_nosost" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_noesp" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="zonas" type="datos:Zona"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="complicaciones" type="datos:Complicaciones"/>
+					<s:element maxOccurs="1" minOccurs="0" name="motivoalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipoalta" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Zona">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="tipozona" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fcms" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fcppm" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="atp1" type="datos:Atp"/>
+					<s:element maxOccurs="1" minOccurs="0" name="atp2" type="datos:Atp"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="choques" type="datos:Choques"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Atp">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="tipo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numsec" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ciclosec" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="acoplamiento" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="decremento" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Choques">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="tipo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="num" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="energia" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Electrodo">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="modelo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nserie" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fabricante" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="localizacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mrecolocacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mrecambio" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mexplante" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ondarpimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="umbralvimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="umbralmsimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="slewrate" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impohmimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impmsimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impvimp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estimfrenica" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ondarpev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="umbralvev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="umbralmsev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impohmev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impmsev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impvev" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="durimpulso" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="voltaje" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sensibilidad" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="poldeteccion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="polestimulacion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="capturaauto" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="via" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="lateralidad" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="camara" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="zonacamara" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="porcion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estado" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="caracter" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechaimplante" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="vdd" type="s:boolean"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Generador">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="modelo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nserie" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fabricante" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="localizacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mrecolocacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mrecambio" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mexplante" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+
+			<s:complexType name="EstudioEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nproc" type="datos:NProcEF"/>
+					<s:element maxOccurs="1" minOccurs="0" name="motivo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hallazgos" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diagnostico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="anestesista" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="interes" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="navegador" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="escopia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ecografia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tescopia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hllegada" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hpuncion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hablacion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hretirada" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hsalida" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="eefanterior" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentariosvia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentariospref" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nestudio" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="primeroperador" type="datos:Personal"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="segundooperador" type="datos:Personal"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="enfermeria" type="datos:Personal"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipodiag1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipodiag2" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="NProcEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idproc" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numproc" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idmotivo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="eef" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ECGEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="ritmo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="conduccion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="conduccionno" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs_cond" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrsno" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="morfologia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="rr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="pr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qt" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qtc" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="FuncionSinusalEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="ciclo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="trns" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="trnsc" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="trt" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tcsa" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hiper" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="frecatro" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="frecint" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="pausa" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="pruebasfarmacologica" type="datos:FuncionSinusalPfEF"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="FuncionSinusalPfEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="prueba" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="1" name="resultado" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="TaquicardiaEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="numtaqui" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="induccion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="taquiindu" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numnoclin" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comportamiento" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idn1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idn2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idn3" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="puntoestimulacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="modoinduccion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="protocolo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="lctren" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nextra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="aavv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="farmacos" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="valorind" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="puntoest2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="modoind2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="valorind2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="longciclo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="morfologia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ConduccionAVEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="ah" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fisiologia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hv2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="estimulacioncontinua" type="datos:EstimulacionContinuaEF"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="pruebasfarma" type="datos:PruebasFarmaEF"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PruebasFarmaEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="prueba" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="1" name="resultado" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="EstimulacionContinuaEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="conduccion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="farmaco" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="bloqueo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nviel" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ms" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ViaAccesoriaEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="idvia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sentido" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ca" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="rr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idloc" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="locs" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PeriodoRefractarioEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="tipo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tejido" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="s1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ref" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="farmaco" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ComplicacionesEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="ediagnostico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="procedimiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedimiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedimienton2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedimienton3" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedimienton4" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="IntentoAblacionEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idnivel1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idnivel2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idnivel3" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otros" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="AblacionEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="sustrato" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="abordaje" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="energia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tradio" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tcrio" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idnodo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iddcha" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idparasep" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idizda" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idepi" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idfluter" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idfibri" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsegmen" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idtv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idiam" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idconvenc" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idnoiam" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="iddavd" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otro" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otratv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cateter" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion" type="datos:ComplicacionAblacionEF"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resultado" type="datos:ResultadoAblacionEF"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="unbounded" minOccurs="0" name="cateterabl" type="datos:CateterEF"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ComplicacionAblacionEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedimiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idlugar" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idtipo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idmuerte" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otra" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ResultadoAblacionEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idres" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idtin" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idparcial" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idtam" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idfa" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idiam" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idnoiam" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="vac" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="taf" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tvi" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="CateterEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idcateter" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idviadiag" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idlocalizaciondiag" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idviaabl" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="lote" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiempoapl" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="potenciaapl" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impapl" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="reutilizado" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Personal">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="nombre" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Sintoma">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="sintoma" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Mesa">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="referidor" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="indicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="epi_previos" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_enfermeria" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicaciones" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn3" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn4" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="restiempo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cardiopatia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_a" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_b" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_c" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_d" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_e" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_f" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_g" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacionessn" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="indicacionotra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_medico" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="episin" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ntg" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nmesa" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Registrador">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="referidor" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="indicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="indicacionsincope" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="indicacionsincopen" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_enfermeria" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_medico" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="implante_sala" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="implante_modelo" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="implante_zona" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cardiopatia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_a" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_b" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_c" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_d" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_e" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_f" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sheldon_g" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resn2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="explante_fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="explante_op_enf" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="explante_op_med" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="explante_diag" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicaciones" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nregistrador" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nserie" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idmodeloreg" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="SeguimientoRegistrador">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_medico" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="op_enfermeria" type="s:string"/>					
+					<s:element maxOccurs="1" minOccurs="0" name="motivo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="remoto" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiposeguimiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="activacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estadobateria" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_sinusal" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_pausa" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_bav" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_tpsv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_tv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_fv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ev_otros" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiempofa" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="observaciones" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="TestATP">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="mclinico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mecg" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="intervalos" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dosis1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dosis2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion_otra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tratamiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ntest" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="TestEPI">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="mclinico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mecg" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="intervalos" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dosis1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dosis2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion_otra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tratamiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="picoqt" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ntest" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="TestFLE">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="mclinico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mecg" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="intervalos" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="qrs" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion_otra" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tratamiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="v1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="v2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ntest" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+
+			<s:complexType name="CV">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fibrilacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fluteratipico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="flutertipico" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idprocedencia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cveprevia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cvenumero" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cveeficaz" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ablacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="nyha" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cardiopatia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="epoc" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="mpdefinitivo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="acv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idtabaco" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diabetes" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="digoxina" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="amiod" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sotalol" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ieca" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="bbloq" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="aas" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="clasei" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="araii" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="antca" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dronedarona" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diureticos" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idduracion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fe" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="al" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otroseco" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="avta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ete" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otrostto" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="exitofinal" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idcomplicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="complicacion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="exitotrans" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numexitotrans" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="duracionextrans" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="energiaextrans" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sec1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsec1" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sec2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsec2" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sec3" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsec3" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sec4" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsec4" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sec5" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idsec5" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="parches" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="atropina" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estimtmpext" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="bbalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="avtalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="araalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="amiodaronaalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="claseialta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dronedaronaalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="solatololalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ieacalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otroalta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="codigointerno" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="anocv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipocardio" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otrosmedalta" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ncv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tipoprocedimiento" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Sistema">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="voltaje" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="impedancia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fmagnetica" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultimochqenergia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultimochqimpedancia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultimochqtcarga" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultimochqfecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="eri" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="eol" type="s:boolean"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Bloqueo">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="bav1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="bav2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="bav3" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PorEstimulacion">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="poras" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="porap" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="porvs" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="porvp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tiempofa" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ObservacionMP">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="arrau" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numarrau" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cambiomodoarrau" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numcambiomodoarrau" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="arrvent" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numarrvent" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="epiruido" type="s:boolean"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ObservacionDAI">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_total" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_tsv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_tv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_fv" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_nosost" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numepisodios_noesp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="atp" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numatp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tefectatp" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="choques" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numchoques" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tefectchoques" type="s:boolean"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_energia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_tcarga" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ultchoque_imp" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="todasefectivas" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="epiruido" type="s:boolean"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="Complicaciones">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="idcomplicacion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="actitud" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otra" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="PlanMedicacion">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="idmedgen" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idmedcom" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="dosis" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="unidad" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="frecuencia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="administracion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="idvia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechaprescripcion" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechainicio" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechamod" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fechasuspension" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="motivosuspension" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estado" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="prescriptor" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="ListaEspera">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="ingreso" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="arritmia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="notas" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="caracter" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cardiopatia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="anestesia" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="procedimiento" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tratamiento" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="estado" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="reclamacion" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="incluidopor" type="s:int"/>
+				</s:sequence>
+			</s:complexType>
+			<s:complexType name="EnfermeriaEF">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="peso" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="talla" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tallag1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tallag2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fclleg" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tafin1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tafin2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fcfin" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tataq1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="tataq2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fctaq" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="calibre1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="miembro" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="planta" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="numero" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="calibre2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diagnos" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="puncion" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="material" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="vesical" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="otros" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="vascular" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hemostasia" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="vendaje" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="zona" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="suero" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="heparina" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="sedacion" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="farmacos" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cv" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cv1" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cv2" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cv3" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cv4" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="motivo" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="exito" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="observ" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="destino" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="fecha" type="s:date"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hemostr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="diuresis" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="cuidados" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="inr" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hemostasiav" type="s:int"/>
+					<s:element maxOccurs="1" minOccurs="0" name="hemostrv" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="inInsertarPaciente">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="paciente" type="datos:Paciente"/>
+						<s:element maxOccurs="1" minOccurs="1" name="situacionclinica" type="datos:SituacionClinica"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarPaciente">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarCV">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="1" name="cv" type="datos:CV"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarCV">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarEF">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="1" name="estudio" type="datos:EstudioEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="funcionsinusal" type="datos:FuncionSinusalEF"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="taquicardias" type="datos:TaquicardiaEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="conduccionav" type="datos:ConduccionAVEF"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="viasaccesorias" type="datos:ViaAccesoriaEF"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="periodosrefractarios" type="datos:PeriodoRefractarioEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="complicaciones" type="datos:ComplicacionesEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="intentoablacion" type="datos:IntentoAblacionEF"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="ablacion" type="datos:AblacionEF"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="cateterdiag" type="datos:CateterEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="regenfermeria" type="datos:EnfermeriaEF"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarEF">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarImplante">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="tipoprocedimiento" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="generador" type="datos:Generador"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="electrodo" type="datos:Electrodo"/>
+						<s:element maxOccurs="1" minOccurs="0" name="hojaimplante" type="datos:HojaImplante"/>
+						<s:element maxOccurs="1" minOccurs="0" name="evolucion" type="datos:Evolucion"/>
+						<s:element maxOccurs="1" minOccurs="0" name="nproc" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarImplante">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+
+			<s:element name="inInsertarSeguimiento">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="tiposeguimiento" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="0" name="motivonoprog" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="0" name="remoto" type="s:boolean"/>
+						<s:element maxOccurs="1" minOccurs="0" name="operador" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="fechaproximo" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="caracterproximo" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="electrodo" type="datos:Electrodo"/>
+						<s:element maxOccurs="1" minOccurs="0" name="sistema" type="datos:Sistema"/>
+						<s:element maxOccurs="1" minOccurs="0" name="bloqueo" type="datos:Bloqueo"/>
+						<s:element maxOccurs="1" minOccurs="0" name="porestimulacion" type="datos:PorEstimulacion"/>
+						<s:element maxOccurs="1" minOccurs="0" name="observacionmp" type="datos:ObservacionMP"/>
+						<s:element maxOccurs="1" minOccurs="0" name="observaciondai" type="datos:ObservacionDAI"/>
+						<s:element maxOccurs="1" minOccurs="0" name="evolucion" type="datos:Evolucion"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="complicaciones" type="datos:Complicaciones"/>
+						<s:element maxOccurs="1" minOccurs="0" name="comentarios" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="nseg" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarSeguimiento">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+
+			<s:element name="inInsertarMesa">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="mesa" type="datos:Mesa"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarMesa">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarRegistrador">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="registrador" type="datos:Registrador"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarRegistrador">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarSeguimientoRegistrador">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="seguimiento" type="datos:SeguimientoRegistrador"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarSeguimientoRegistrador">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarTestATP">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="atp" type="datos:TestATP"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarTestATP">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarTestFle">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="atp" type="datos:TestFLE"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarTestFle">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarTestEpi">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="fecha" type="s:date"/>
+						<s:element maxOccurs="1" minOccurs="0" name="situacionclinica" type="datos:SituacionClinica"/>
+						<s:element maxOccurs="1" minOccurs="0" name="ecg" type="datos:ECGEF"/>
+						<s:element maxOccurs="1" minOccurs="0" name="atp" type="datos:TestEPI"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarTestEpi">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarPlanMedicacion">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="unbounded" minOccurs="0" name="planmedicacion" type="datos:PlanMedicacion"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarPlanMedicacion">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="inInsertarListaEspera">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="nhc" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="listaespera" type="datos:ListaEspera"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="outInsertarListaEspera">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="resultado" type="s:int"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+  </types>
+  <message name="msgInsertarRegistradorOut">
+    <part name="parameters" element="s0:outInsertarRegistrador">
+    </part>
+  </message>
+  <message name="msgInsertarTestEpiOut">
+    <part name="parameters" element="s0:outInsertarTestEpi">
+    </part>
+  </message>
+  <message name="msgInsertarEFIn">
+    <part name="parameters" element="s0:inInsertarEF">
+    </part>
+  </message>
+  <message name="msgInsertarMesaIn">
+    <part name="parameters" element="s0:inInsertarMesa">
+    </part>
+  </message>
+  <message name="msgInsertarCVOut">
+    <part name="parameters" element="s0:outInsertarCV">
+    </part>
+  </message>
+  <message name="msgInsertarPacienteOut">
+    <part name="parameters" element="s0:outInsertarPaciente">
+    </part>
+  </message>
+  <message name="msgInsertarImplanteIn">
+    <part name="parameters" element="s0:inInsertarImplante">
+    </part>
+  </message>
+  <message name="msgInsertarPacienteIn">
+    <part name="parameters" element="s0:inInsertarPaciente">
+    </part>
+  </message>
+  <message name="msgInsertarImplanteOut">
+    <part name="parameters" element="s0:outInsertarImplante">
+    </part>
+  </message>
+  <message name="msgInsertarSeguimientoIn">
+    <part name="parameters" element="s0:inInsertarSeguimiento">
+    </part>
+  </message>
+  <message name="msgInsertarSeguimientoOut">
+    <part name="parameters" element="s0:outInsertarSeguimiento">
+    </part>
+  </message>
+  <message name="msgInsertarTestATPOut">
+    <part name="parameters" element="s0:outInsertarTestATP">
+    </part>
+  </message>
+  <message name="msgInsertarTestEpiIn">
+    <part name="parameters" element="s0:inInsertarTestEpi">
+    </part>
+  </message>
+  <message name="msgInsertarMesaOut">
+    <part name="parameters" element="s0:outInsertarMesa">
+    </part>
+  </message>
+  <message name="msgInsertarCVIn">
+    <part name="parameters" element="s0:inInsertarCV">
+    </part>
+  </message>
+  <message name="msgInsertarEFOut">
+    <part name="parameters" element="s0:outInsertarEF">
+    </part>
+  </message>
+  <message name="msgInsertarRegistradorIn">
+    <part name="parameters" element="s0:inInsertarRegistrador">
+    </part>
+  </message>
+  <message name="msgInsertarTestFleOut">
+    <part name="parameters" element="s0:outInsertarTestFle">
+    </part>
+  </message>
+  <message name="msgInsertarTestFleIn">
+    <part name="parameters" element="s0:inInsertarTestFle">
+    </part>
+  </message>
+  <message name="msgInsertarTestATPIn">
+    <part name="parameters" element="s0:inInsertarTestATP">
+    </part>
+  </message>
+  
+  <message name="msgInsertarPlanMedicacionIn">
+    <part name="parameters" element="s0:inInsertarPlanMedicacion">
+    </part>
+  </message>
+  <message name="msgInsertarPlanMedicacionOut">
+    <part name="parameters" element="s0:outInsertarPlanMedicacion">
+    </part>
+  </message>
+  <message name="msgInsertarSeguimientoRegistradorIn">
+    <part name="parameters" element="s0:inInsertarSeguimientoRegistrador">
+    </part>
+  </message>
+  <message name="msgInsertarSeguimientoRegistradorOut">
+    <part name="parameters" element="s0:outInsertarSeguimientoRegistrador">
+    </part>
+  </message>
+  <message name="msgInsertarListaEsperaIn">
+    <part name="parameters" element="s0:inInsertarListaEspera">
+    </part>
+  </message>
+  <message name="msgInsertarListaEsperaOut">
+    <part name="parameters" element="s0:outInsertarListaEspera">
+    </part>
+  </message>
+  <portType name="CanalIntegracionSoap">
+    <operation name="insertarPaciente">
+      	<input message="s0:msgInsertarPacienteIn">
+    	</input>
+      	<output message="s0:msgInsertarPacienteOut">
+    	</output>
+    </operation>
+    <operation name="insertarCV">
+      	<input message="s0:msgInsertarCVIn">
+    	</input>
+      	<output message="s0:msgInsertarCVOut">
+    	</output>
+    </operation>
+    <operation name="insertarEF">
+      	<input message="s0:msgInsertarEFIn">
+    	</input>
+     	<output message="s0:msgInsertarEFOut">
+    	</output>
+    </operation>
+    <operation name="insertarImplante">
+      	<input message="s0:msgInsertarImplanteIn">
+    	</input>
+      	<output message="s0:msgInsertarImplanteOut">
+    	</output>
+    </operation>
+    <operation name="insertarSeguimiento">
+      	<input message="s0:msgInsertarSeguimientoIn">
+    	</input>
+      	<output message="s0:msgInsertarSeguimientoOut">
+    	</output>
+    </operation>
+    <operation name="insertarMesa">
+      	<input message="s0:msgInsertarMesaIn">
+    	</input>
+      	<output message="s0:msgInsertarMesaOut">
+    	</output>
+    </operation>
+    <operation name="insertarRegistrador">
+      	<input message="s0:msgInsertarRegistradorIn">
+    	</input>
+      	<output message="s0:msgInsertarRegistradorOut">
+    	</output>
+    </operation>
+    <operation name="insertarTestATP">
+      	<input message="s0:msgInsertarTestATPIn">
+    	</input>
+      	<output message="s0:msgInsertarTestATPOut">
+    	</output>
+    </operation>
+    <operation name="insertarTestFle">
+      	<input message="s0:msgInsertarTestFleIn">
+    	</input>
+      	<output message="s0:msgInsertarTestFleOut">
+    	</output>
+    </operation>
+    <operation name="insertarTestEpi">
+      	<input message="s0:msgInsertarTestEpiIn">
+    	</input>
+      	<output message="s0:msgInsertarTestEpiOut">
+    	</output>
+    </operation>
+    <operation name="insertarPlanMedicacion">
+      	<input message="s0:msgInsertarPlanMedicacionIn"> 
+    	</input>
+      	<output message="s0:msgInsertarPlanMedicacionOut">
+    	</output>
+    </operation>
+    <operation name="insertarSeguimientoRegistrador">
+      	<input message="s0:msgInsertarSeguimientoRegistradorIn"> 
+    	</input>
+      	<output message="s0:msgInsertarSeguimientoRegistradorOut">
+    	</output>
+    </operation>
+    <operation name="insertarListaEspera">
+      	<input message="s0:msgInsertarListaEsperaIn"> 
+    	</input>
+      	<output message="s0:msgInsertarListaEsperaOut">
+    	</output>
+    </operation>
+  </portType>
+  <binding name="CanalIntegracionSoap" type="s0:CanalIntegracionSoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="insertarPaciente">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarPaciente" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarCV">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarCV" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarEF">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarEF" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarImplante">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarImplante" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarSeguimiento">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarSeguimiento" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarMesa">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarMesa" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarRegistrador">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarRegistrador" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarTestATP">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarTestATP" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarTestFle">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarTestFle" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarTestEpi">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarTestEpi" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarPlanMedicacion">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarPlanMedicacion" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarSeguimientoRegistrador">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarSeguimientoRegistrador" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="insertarListaEspera">
+      <soap:operation soapAction="http://canal.integracion.idea.sorin.com/CanalIntegracion.insertarListaEspera" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CanalIntegracion">
+    <port name="CanalIntegracionSoap" binding="s0:CanalIntegracionSoap">
+      <soap:address location="http://localhost:8080/idea/services/CanalIntegracion"/>
+    </port>
+  </service>
+</definitions>

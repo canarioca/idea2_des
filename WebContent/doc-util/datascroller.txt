@@ -1,0 +1,19 @@
+/*
+ * Para que todos tengamos los mismos botones de navegación con estilos, 
+ * poned esto, cambiando el for
+ */ 
+
+<rich:datascroller for="tablapacientes" renderIfSinglePage="false" fastStep="3">
+	<f:facet name="first"><h:graphicImage url="/img/genericos/navegacion/first.png" /></f:facet>
+	<f:facet name="last"><h:graphicImage url="/img/genericos/navegacion/last.png" /></f:facet>
+	<f:facet name="fastrewind"><h:graphicImage url="/img/genericos/navegacion/frwd.png" /></f:facet>
+	<f:facet name="fastforward"><h:graphicImage url="/img/genericos/navegacion/ffwd.png" /></f:facet>
+	<f:facet name="previous"><h:graphicImage url="/img/genericos/navegacion/rwd.png" /></f:facet>
+	<f:facet name="next"><h:graphicImage url="/img/genericos/navegacion/fwd.png" /></f:facet>
+	<f:facet name="first_disabled"><h:graphicImage url="/img/genericos/navegacion/first.png" /></f:facet>
+	<f:facet name="last_disabled"><h:graphicImage url="/img/genericos/navegacion/last.png" /></f:facet>
+	<f:facet name="fastrewind_disabled"><h:graphicImage url="/img/genericos/navegacion/frwd.png" /></f:facet>
+	<f:facet name="fastforward_disabled"><h:graphicImage url="/img/genericos/navegacion/ffwd.png" /></f:facet>
+	<f:facet name="previous_disabled"><h:graphicImage url="/img/genericos/navegacion/rwd.png" /></f:facet>
+	<f:facet name="next_disabled"><h:graphicImage url="/img/genericos/navegacion/fwd.png" /></f:facet>
+</rich:datascroller>

@@ -1,0 +1,6 @@
+/*************** TECLADO VIRTUAL ******************/
+
+Para poner el icono del teclado virtual y el teclado:
+	- En los input donde queramos que salga, poner que sean de la clase "keyboardInput"
+	(styleClass="keyboardInput") y automáticamente al cargar la página recorre los elementos
+	con esa clase y pone el icono.

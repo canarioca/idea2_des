@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:panelGrid width="100%" styleClass="index_text_center"
+		 id="cabecerapaciente">
+		<h:panelGrid columns="15" rendered="#{controlPacientes.pacienteSelect.nhc ne null }">
+			<h:graphicImage value="/img/iconos/masculino.png" id="imgH"
+				styleClass="hvn_enlImagen" style="border:none;"
+				title="#{ms.hombre }" rendered="#{controlPacientes.pacienteSelect.sexo eq 1}" />
+			<h:graphicImage value="/img/iconos/femenino.png" id="imgM"
+				styleClass="hvn_enlImagen" style="border:none;" title="#{ms.mujer }"
+				rendered="#{controlPacientes.pacienteSelect.sexo eq 2}" />
+			<h:outputLabel styleClass="index_text_center" style="color: #f9f9f9;font-weight: bold;font-size: 14px;" 
+				value="#{controlPacientes.pacienteSelect.nombreCompleto} "/>
+			<h:outputLabel styleClass="index_text_center" style="color: #f9f9f9;font-weight: bold;font-size: 12px;" 
+				value="#{controlPacientes.pacienteSelect.edad} #{ms.anios} (#{controlPacientes.pacienteSelect.fechaNaciString }) "/>
+			<h:graphicImage value="/img/iconos/idpat.png" 
+				styleClass="hvn_enlImagen" style="border:none;" title="NHC"/>
+			<h:outputLabel styleClass="index_text_center" style="color: #f9f9f9;font-weight: bold;font-size: 12px;" 
+				value="#{controlPacientes.pacienteSelect.nhc} " title="#{ms.nhc }"/>					
+			<h:graphicImage value="/img/iconos/DAI.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.dai eq true }" 
+				width="22" height="11" title="#{ms.cab_imp_dai }"/>
+			<h:graphicImage value="/img/iconos/MP.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.mp eq true }" 
+				width="22" height="11" title="#{ms.cab_imp_mps }"/>
+			<h:outputLabel styleClass="index_text_center" style="color: red;font-weight: bold;font-size: 12px;"
+				rendered="#{controlPacientes.pacienteSelect.edad &lt; 17 }" 
+				value="#{ms.cab_pediatrico }"/>
+			<h:outputLabel styleClass="index_text_center" style="color: red;font-weight: bold;font-size: 12px;"
+				rendered="#{controlPacientes.pacienteSelect.sitclin.exitus eq 1 }" 
+				value="#{ms.cab_exitus }"/>
+			<h:outputLabel styleClass="index_text_center" style="color: red;font-weight: bold;font-size: 12px;"
+				rendered="#{controlPacientes.pacienteSelect.sitclin.alergias ne null and controlPacientes.pacienteSelect.sitclin.alergias ne ''}" 
+				value="#{ms.cab_alergias }" title="#{controlPacientes.pacienteSelect.sitclin.alergias}"/>
+			<h:graphicImage value="/img/iconos/xray.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.dosisEscopiaAcum ne null and controlPacientes.pacienteSelect.dosisEscopiaAcum ne '' }" 
+				width="22" height="22" title="#{ms.cab_dosis_escopia }: #{controlPacientes.pacienteSelect.dosisEscopiaAcum} uGray/cm2"/>
+			<h:graphicImage value="/img/iconos/complicacion.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.resumenCompl ne null and controlPacientes.pacienteSelect.resumenCompl ne '' }" 
+				width="16" height="16" title="#{controlPacientes.pacienteSelect.resumenCompl}"/>
+			<h:graphicImage value="/img/iconos/protocolo.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.protocolo eq true }" 
+				width="16" height="16" title="#{ms.cab_protocolo}"/>
+		</h:panelGrid>
+	</h:panelGrid>
+	<h:panelGrid rendered="false">
+		<h:graphicImage value="/img/iconos/EEF.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.neef ne 0 }" 
+			width="22" height="11" title="Se han realizado Estudios Electrofisiológicos sobre el paciente"/>
+		<h:graphicImage value="/img/iconos/CV.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.ncv ne 0 }" 
+			width="22" height="11" title="Se ha realizado Cardioversión sobre el paciente"/>
+		<h:graphicImage value="/img/iconos/DAI.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.dai eq true }" 
+			width="22" height="11" title="Generador implantado actual: Desfibrilador"/>
+		<h:graphicImage value="/img/iconos/MP.png" style="border: 0px;" rendered="#{controlPacientes.pacienteSelect.mp eq true }" 
+			width="22" height="11" title="Generador implantado actual: Marcapasos"/>
+	</h:panelGrid>
+	<h:panelGrid width="100%" styleClass="index_text_center" id="cabeceraClaveAlerta">
+		<h:outputLabel value="#{ms.cab_exp_pw_1 } #{loginForm.acceso.diasrev } #{ms.cab_exp_pw_1 } " 
+			rendered="#{loginForm.acceso.diasrev &lt; 15}"
+			style="color: red;font-size: 14px;font-weight: bold;"/>	
+		<h:panelGrid columns="2">
+			<h:graphicImage url="/img/genericos/time.png" rendered="#{not empty loginForm.pend}"
+				title="#{ms.cab_inte_1 }" width="16" height="16" style="border: 0px;" />
+			<a4j:commandLink rendered="#{not empty loginForm.pend}" action="irIntegraciones"
+				actionListener="#{controlIntegraciones.inicia }" reRender="tablaIntegraciones"
+				value="#{ms.cab_inte_2 }">																				
+			</a4j:commandLink>
+		</h:panelGrid>			
+	</h:panelGrid>
+	<h:panelGrid width="100%" styleClass="index_text_center" id="cabpaci">
+		<h:outputLabel styleClass="index_text_center" style="color: white;font-weight: bold;font-size: 10px;" 
+			value="#{controlEef.tiempo }"/>
+		<h:outputLabel styleClass="index_text_center" rendered="#{controlPacientes.booleanCardioversiónElectrica == true or 
+				             controlPacientes.booleanPrimoImplante == true or 
+				             controlPacientes.booleanReintervencion == true or 
+				             controlPacientes.booleanRecambioDispositivo == true or 
+				             controlPacientes.booleanUpgradeDispositivo == true or 
+				             controlPacientes.booleanRecolocacionGenerador == true or 
+				             controlPacientes.booleanRecolocacionElectrodo == true or 
+				             controlPacientes.booleanReimplante == true}" 
+			value="#{controlSeguimientos.numeroSeguimientos }"/>
+	</h:panelGrid>
+</ui:composition>

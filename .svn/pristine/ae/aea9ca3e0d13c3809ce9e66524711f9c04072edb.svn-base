@@ -1,0 +1,31 @@
+package com.sorin.idea.dto;
+
+import java.io.Serializable;
+
+public class RehabilitacionCardiacaDTO implements Serializable{
+
+	private static final long serialVersionUID = 1106387999301512294L;
+	
+	public RehabiliatadorDTO rehabilitadorDTO;
+	public PsicologaDTO psicologaDTO;
+	public NutricionistaDTO nutricionistaDTO;
+	
+	public RehabiliatadorDTO getRehabilitadorDTO() {
+		return rehabilitadorDTO;
+	}
+	public void setRehabilitadorDTO(RehabiliatadorDTO rehabilitadorDTO) {
+		this.rehabilitadorDTO = rehabilitadorDTO;
+	}
+	public PsicologaDTO getPsicologaDTO() {
+		return psicologaDTO;
+	}
+	public void setPsicologaDTO(PsicologaDTO psicologaDTO) {
+		this.psicologaDTO = psicologaDTO;
+	}
+	public NutricionistaDTO getNutricionistaDTO() {
+		return nutricionistaDTO;
+	}
+	public void setNutricionistaDTO(NutricionistaDTO nutricionistaDTO) {
+		this.nutricionistaDTO = nutricionistaDTO;
+	}
+}

@@ -1,0 +1,89 @@
+package com.sorin.idea.dto;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class NutricionistaDTO implements Serializable{
+
+	private static final long serialVersionUID = 7219341891567577690L;
+	
+	protected Date fechaNutricion;
+	protected String escalaDietetica;
+	protected String perimetroAbdominal;
+	protected String perimetroCintura;
+	protected String indiceCinturaCadera;
+	protected String cinturaCadera;
+	protected String indiceCinturaTalla;
+	protected String masaMuscularEsqueletico;
+	protected String masaGrasaCorporal;
+	protected String porcentajeGrasaCorporal;
+	protected String relacionCinturaCadera;
+	
+	
+	public String getEscalaDietetica() {
+		return escalaDietetica;
+	}
+	public void setEscalaDietetica(String escalaDietetica) {
+		this.escalaDietetica = escalaDietetica;
+	}
+	public String getPerimetroAbdominal() {
+		return perimetroAbdominal;
+	}
+	public void setPerimetroAbdominal(String perimetroAbdominal) {
+		this.perimetroAbdominal = perimetroAbdominal;
+	}
+	public String getPerimetroCintura() {
+		return perimetroCintura;
+	}
+	public void setPerimetroCintura(String perimetroCintura) {
+		this.perimetroCintura = perimetroCintura;
+	}
+	public String getIndiceCinturaCadera() {
+		return indiceCinturaCadera;
+	}
+	public void setIndiceCinturaCadera(String indiceCinturaCadera) {
+		this.indiceCinturaCadera = indiceCinturaCadera;
+	}
+	public String getCinturaCadera() {
+		return cinturaCadera;
+	}
+	public void setCinturaCadera(String cinturaCadera) {
+		this.cinturaCadera = cinturaCadera;
+	}
+	public String getIndiceCinturaTalla() {
+		return indiceCinturaTalla;
+	}
+	public void setIndiceCinturaTalla(String indiceCinturaTalla) {
+		this.indiceCinturaTalla = indiceCinturaTalla;
+	}
+	public String getMasaMuscularEsqueletico() {
+		return masaMuscularEsqueletico;
+	}
+	public void setMasaMuscularEsqueletico(String masaMuscularEsqueletico) {
+		this.masaMuscularEsqueletico = masaMuscularEsqueletico;
+	}
+	public String getMasaGrasaCorporal() {
+		return masaGrasaCorporal;
+	}
+	public void setMasaGrasaCorporal(String masaGrasaCorporal) {
+		this.masaGrasaCorporal = masaGrasaCorporal;
+	}
+	public String getPorcentajeGrasaCorporal() {
+		return porcentajeGrasaCorporal;
+	}
+	public void setPorcentajeGrasaCorporal(String porcentajeGrasaCorporal) {
+		this.porcentajeGrasaCorporal = porcentajeGrasaCorporal;
+	}
+	public String getRelacionCinturaCadera() {
+		return relacionCinturaCadera;
+	}
+	public void setRelacionCinturaCadera(String relacionCinturaCadera) {
+		this.relacionCinturaCadera = relacionCinturaCadera;
+	}
+	public Date getFechaNutricion() {
+		return fechaNutricion;
+	}
+	public void setFechaNutricion(Date fechaNutricion) {
+		this.fechaNutricion = fechaNutricion;
+	}
+}

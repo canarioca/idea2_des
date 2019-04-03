@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <mensajeEntrada xmlns="https://afirma5/ws/webAuthentication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="https://_XXX_/authentication/xsd/authentication.xsd">
+    <peticion>ObtenerInfoValidacionTicket</peticion>
+    <versionMsg>1.0</versionMsg>
+    <parametros>
+      <idTicket></idTicket>
+      <idAplicacion></idAplicacion>
+      <idSesionWeb></idSesionWeb>
+    </parametros>
+  </mensajeEntrada>

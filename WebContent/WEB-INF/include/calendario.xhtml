@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:z="http://www.qualcomm.com/jsf/core"
+	xmlns:rich="http://richfaces.ajax4jsf.org/rich"
+	xmlns:c="http://java.sun.com/jstl/core">
+
+
+<ui:component>
+	<!-- The rendered attribute is optional. Set it to true if it is missing. -->
+	<c:if test="${empty rendered}">
+		<c:set var="rendered" value="${true}" />
+	</c:if>
+	<c:if test="${empty manual}">
+		<c:set var="manual" value="${true}" />
+	</c:if>
+	
+	<rich:calendar id="#{ident}" value="#{valor}" enableManualInput="#{manual}" 
+		readonly="#{readonly}" style="#{style}" styleClass="#{styleClass}" 
+		rendered="#{rendered}" title="#{title}" disabled="#{disabled}" immediate="#{immediate}">
+	</rich:calendar>
+	<rich:hotKey key="F8" handler="fn('F8','#{ident}','#{formulario}');"
+		selector="##{ident}" />
+	<rich:hotKey key="F9" handler="fn('F9','#{ident}','#{formulario}');"
+		selector="##{ident}" />
+</ui:component>
+
+</html>
