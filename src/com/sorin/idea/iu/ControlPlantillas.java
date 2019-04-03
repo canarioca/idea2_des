@@ -22,7 +22,7 @@ public class ControlPlantillas extends BaseIU{
 	private SelectorIdioma si;
 	private static ResourceBundle bundle;
 
-	public ControlPlantillas(){
+	public ControlPlantillas(){  
         try {
               this.si = (SelectorIdioma) getBean("selectorIdioma");
               FacesContext context = FacesContext.getCurrentInstance();
