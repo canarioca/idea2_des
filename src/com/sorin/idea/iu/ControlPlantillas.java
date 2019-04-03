@@ -15,6 +15,8 @@ import hvn.cm.modelo.Mensaje;
 
 public class ControlPlantillas extends BaseIU{
 
+	// comentario de prueba
+	
 	private static final long serialVersionUID = -947158722307842244L;
 
 	private static Logger logger = Logger.getLogger(ControlPlantillas.class);
