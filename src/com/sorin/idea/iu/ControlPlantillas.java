@@ -22,8 +22,6 @@ public class ControlPlantillas extends BaseIU{
 	private SelectorIdioma si;
 	private static ResourceBundle bundle;
 
-	// commit 
-	
 	public ControlPlantillas(){  
         try {
               this.si = (SelectorIdioma) getBean("selectorIdioma");
