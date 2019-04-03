@@ -15,7 +15,7 @@ import hvn.cm.modelo.Mensaje;
 
 public class ControlPlantillas extends BaseIU{
 
-	// rama desarrollo
+	// rama desarrollo  
 	
 	private static final long serialVersionUID = -947158722307842244L;
 
