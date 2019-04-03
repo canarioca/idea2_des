@@ -218,6 +218,12 @@
 		<managed-bean-class>com.sorin.idea.iu.ControlPerfilUsuario</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+            <managed-bean-name>controlPlantillas</managed-bean-name>
+            <managed-bean-class>com.sorin.idea.iu.ControlPlantillas</managed-bean-class>
+            <managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 	<!-- FRR -->
 
 	<!-- Modulo Autenticacion Bean -->

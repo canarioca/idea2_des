@@ -73,14 +73,14 @@ public class ControlPerfilUsuario extends BaseIU {
 
 		procdao = new ProcedimientoDaoImpl();
 		
-		ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+		ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
 		listaPlantillas = servicioPlantillasImpl.obtenerListaPlantillas(this.usuario) ;
 		listaAmbitos = servicioPlantillasImpl.obtenerListaAmbitos( Arrays.asList( lf.getAccmods() ) );
 	}
 	
 	public void guardarPlantillas( ActionEvent e ) {
 		
-		ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+		ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
 		
 		if( Integer.valueOf( this.selectedAmbito ) == 0 ) {
 			this.pintaMensaje( 2, this.bundle.getString("info_msg_info_plantilla_seleccionarAmbito"));
@@ -126,7 +126,7 @@ public class ControlPerfilUsuario extends BaseIU {
 	public void cambiarPlantilla( ActionEvent e ){
 		
 		try {
-			ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+			ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
 			Plantillas plantilla = servicioPlantillasImpl.obtenerPlantillas(Integer.valueOf( selectedPlantilla ) );
 			
 			if( plantilla != null ) {
@@ -158,7 +158,7 @@ public class ControlPerfilUsuario extends BaseIU {
 	public void eliminarPlantilla( ActionEvent e ){
 		
 		try {
-			ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+			ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
 			servicioPlantillasImpl.eliminarPlantilla( Integer.valueOf( selectedPlantilla ) );
 			this.descripcionPlantilla="";
 			this.tituloPlantilla="";

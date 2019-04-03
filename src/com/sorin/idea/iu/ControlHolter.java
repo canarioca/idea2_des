@@ -34,7 +34,6 @@ import com.sorin.idea.dto.EpisodioDto;
 import com.sorin.idea.dto.Evento;
 import com.sorin.idea.dto.Holter;
 import com.sorin.idea.dto.HolterPk;
-import com.sorin.idea.dto.Plantillas;
 import com.sorin.idea.dto.Procedimiento;
 import com.sorin.idea.dto.ProcedimientoPk;
 import com.sorin.idea.dto.Protocolos;
@@ -43,7 +42,6 @@ import com.sorin.idea.dto.SintomasSitclinProcPk;
 import com.sorin.idea.dto.SituacionClinicaGeneral;
 import com.sorin.idea.dto.SituacionClinicaProc;
 import com.sorin.idea.dto.SituacionClinicaProcPk;
-import com.sorin.idea.exceptions.PlantillasDaoException;
 import com.sorin.idea.exceptions.ProcedimientoDaoException;
 import com.sorin.idea.exceptions.SituacionClinicaGeneralDaoException;
 import com.sorin.idea.jdbc.EpisodioDaoImpl;
@@ -150,7 +148,7 @@ public class ControlHolter extends BaseIU {
 	private List<SelectItem> listaPlantillas;
 	private String selectedPlantilla;
 	
-	ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+	private ServicioPlantillasImpl servicioPlantillasImpl;
 	
 	public void iniciaHolter(ActionEvent e) {
 		try {
@@ -205,6 +203,7 @@ public class ControlHolter extends BaseIU {
 					this.procs.add(p);
 			}
 			
+			this.servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
 			this.listaPlantillas = servicioPlantillasImpl.obtenerListaPlantillas(this.usuario);
 			
 		} catch (Exception e1) {
@@ -1505,7 +1504,9 @@ public class ControlHolter extends BaseIU {
 	 * @param e
 	 */
 	public void cambiarPlantilla( ActionEvent e ) { 
-			this.holter.setRecomendaciones( this.holter.getRecomendaciones() + "  " + ControlPlantillas.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
+		ControlPlantillas cpan = new ControlPlantillas();
+        this.holter.setComentariosAna( this.holter.getComentariosAna() + "  " + cpan.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
+        //this.holter.setRecomendaciones( this.holter.getRecomendaciones() + "  " + ControlPlantillas.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
 	}
 	
 	/***********************************

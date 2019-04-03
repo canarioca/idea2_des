@@ -52,7 +52,7 @@
 						<rich:tab label="#{ms.export_datos_tab_hol24_title }" rendered="#{controlPacientes.booleanHolter == true}">
 							<a4j:include viewId="consultas/holter.jsp"/>
 						</rich:tab>
-						<rich:tab label="#{ms.export_datos_tab_elr_title }" rendered="#{controlPacientes.booleanRecolocacionElectrodo == true}">
+						<rich:tab label="#{ms.export_datos_tab_elr_title }" rendered="#{controlPacientes.booleanRegistradorEventosExterno == true}">
 							<a4j:include viewId="consultas/regevext.jsp"/>
 						</rich:tab>
 					</rich:tabPanel>

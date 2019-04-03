@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
 import com.sorin.idea.dto.ArrAccesoModulos;
@@ -13,15 +12,11 @@ import com.sorin.idea.dto.PlantillasPk;
 import com.sorin.idea.dto.UsuariosPlantillas;
 import com.sorin.idea.exceptions.PlantillasDaoException;
 import com.sorin.idea.exceptions.UsuariosPlantillasDaoException;
-import com.sorin.idea.iu.BaseIU;
 import com.sorin.idea.iu.SelectorIdioma;
 import com.sorin.idea.jdbc.PlantillasDaoImpl;
 import com.sorin.idea.servicios.ServicioPlantillas;
 
-import hvn.cm.iu.IUException;
-import hvn.cm.modelo.Mensaje;
-
-public class ServicioPlantillasImpl extends BaseIU implements ServicioPlantillas {
+public class ServicioPlantillasImpl implements ServicioPlantillas {
 
 	private static final long serialVersionUID = 5878965836496099674L;
 	
@@ -32,15 +27,10 @@ public class ServicioPlantillasImpl extends BaseIU implements ServicioPlantillas
 	private List<SelectItem> listaPlantillas;
 	private List<SelectItem> listaAmbitos;
 	
-	public ServicioPlantillasImpl(){
-		try {
-			this.si = (SelectorIdioma) getBean("selectorIdioma");
-			FacesContext context = FacesContext.getCurrentInstance();
-			this.bundle = ResourceBundle.getBundle(context.getApplication().getMessageBundle(), si.getLocale());
-		} catch (IUException e) {
-			this.pintaMensaje( Mensaje.SEVERIDAD_ERROR, this.bundle.getString("info_msg_error_rec_pat")+": "+ e.getMessage());
-		}
+	public ServicioPlantillasImpl(ResourceBundle bundle){
+        this.bundle = bundle;
 	}
+
 	
 	@Override
 	public Plantillas obtenerPlantillas( int idPlantilla ) throws PlantillasDaoException {

@@ -1,12 +1,8 @@
 package com.sorin.idea.iu;
 
-import hvn.cm.modelo.Mensaje;
-
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -21,14 +17,10 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import jcifs.smb.SmbFile;
-
-import org.apache.commons.codec.binary.Base64;
 import org.apache.log4j.Logger;
 
 import com.sorin.idea.dao.EpisodioDao;
 import com.sorin.idea.dao.EventoDao;
-import com.sorin.idea.dao.HolterDao;
 import com.sorin.idea.dao.ProcedimientoDao;
 import com.sorin.idea.dao.ProtocolosDao;
 import com.sorin.idea.dao.RegistradorEventosExtDao;
@@ -36,33 +28,9 @@ import com.sorin.idea.dao.SintomasSitclinProcDao;
 import com.sorin.idea.dao.SituacionClinicaGeneralDao;
 import com.sorin.idea.dao.SituacionClinicaProcDao;
 import com.sorin.idea.dto.ArrMaestras;
-import com.sorin.idea.dto.Complicacion;
-import com.sorin.idea.dto.Electrodos;
 import com.sorin.idea.dto.Episodio;
 import com.sorin.idea.dto.EpisodioDto;
 import com.sorin.idea.dto.Evento;
-import com.sorin.idea.dto.Generador;
-import com.sorin.idea.dto.Holter;
-import com.sorin.idea.dto.HolterPk;
-import com.sorin.idea.dto.ImpAtp;
-import com.sorin.idea.dto.ImpAtpPk;
-import com.sorin.idea.dto.ImpChoques;
-import com.sorin.idea.dto.ImpChoquesPk;
-import com.sorin.idea.dto.ImpEvolucionComplicacion;
-import com.sorin.idea.dto.ImpEvolucionComplicacionPk;
-import com.sorin.idea.dto.ImpGenerador;
-import com.sorin.idea.dto.ImpHojaImplanteComplicacion;
-import com.sorin.idea.dto.ImpHojaImplanteComplicacionPk;
-import com.sorin.idea.dto.ImpHojaImplanteEnf;
-import com.sorin.idea.dto.ImpHojaImplanteEnfPk;
-import com.sorin.idea.dto.ImpHojaImplantePop;
-import com.sorin.idea.dto.ImpHojaImplantePopPk;
-import com.sorin.idea.dto.ImpHojaImplanteSop;
-import com.sorin.idea.dto.ImpHojaImplanteSopPk;
-import com.sorin.idea.dto.ImpImplanteElectrodos;
-import com.sorin.idea.dto.ImpImplanteElectrodosPk;
-import com.sorin.idea.dto.ImpZona;
-import com.sorin.idea.dto.ImpZonaPk;
 import com.sorin.idea.dto.Procedimiento;
 import com.sorin.idea.dto.ProcedimientoPk;
 import com.sorin.idea.dto.Protocolos;
@@ -73,14 +41,10 @@ import com.sorin.idea.dto.SintomasSitclinProcPk;
 import com.sorin.idea.dto.SituacionClinicaGeneral;
 import com.sorin.idea.dto.SituacionClinicaProc;
 import com.sorin.idea.dto.SituacionClinicaProcPk;
-import com.sorin.idea.exceptions.HolterDaoException;
 import com.sorin.idea.exceptions.ProcedimientoDaoException;
 import com.sorin.idea.exceptions.SituacionClinicaGeneralDaoException;
-import com.sorin.idea.iu.gestor.GestorSmb;
-import com.sorin.idea.iu.gestor.SmbDto;
 import com.sorin.idea.jdbc.EpisodioDaoImpl;
 import com.sorin.idea.jdbc.EventoDaoImpl;
-import com.sorin.idea.jdbc.HolterDaoImpl;
 import com.sorin.idea.jdbc.ProcedimientoDaoImpl;
 import com.sorin.idea.jdbc.ProtocolosDaoImpl;
 import com.sorin.idea.jdbc.RegistradorEventosExtDaoImpl;
@@ -91,12 +55,12 @@ import com.sorin.idea.servicios.impl.ServicioPlantillasImpl;
 import com.sorin.idea.util.ConstructorPdf;
 import com.sorin.idea.util.GeneradorXml;
 import com.sorin.idea.util.InfoCentro;
-import com.sorin.idea.util.UtilConversorTarjetaEuropea;
 import com.sorin.idea.util.UtilDatos;
 import com.sorin.idea.util.UtilFechas;
 import com.sorin.idea.util.UtilFiles;
 import com.sorin.idea.util.UtilMapeos;
-import com.sorin.idea.util.UtilReporteInformes;
+
+import hvn.cm.modelo.Mensaje;
 
 public class ControlRegEvExt extends BaseIU {
 
@@ -182,7 +146,7 @@ public class ControlRegEvExt extends BaseIU {
 	// ListaPlantillas
 	private List<SelectItem> listaPlantillas;
 	private String selectedPlantilla;
-	ServicioPlantillasImpl servicioPlantillasImpl = new ServicioPlantillasImpl();
+	private ServicioPlantillasImpl servicioPlantillasImpl; 
 	
 	public void iniciaRegEvExt(ActionEvent e) {
 		try {
@@ -200,6 +164,9 @@ public class ControlRegEvExt extends BaseIU {
 			getInfoEstacionCliente();
 			this.inicializaTiempo();
 			this.cm = (ControlMaestras) getBean("controlMaestras");
+			
+			this.servicioPlantillasImpl = new ServicioPlantillasImpl(this.bundle);
+			
 			if (this.cm == null)
 				this.cm = new ControlMaestras();
 			this.lf = (LoginForm) getBean("loginForm");
@@ -1191,8 +1158,11 @@ public class ControlRegEvExt extends BaseIU {
 	 * @param e
 	 */
 	public void cambiarPlantilla( ActionEvent e ) { 
-			this.regevext.setRecomendaciones( this.regevext.getRecomendaciones() + "  " + ControlPlantillas.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
+        ControlPlantillas cpan = new ControlPlantillas();
+        this.regevext.setRecomendaciones( this.regevext.getRecomendaciones() + "  " + cpan.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
+        //this.holter.setRecomendaciones( this.holter.getRecomendaciones() + "  " + ControlPlantillas.cambiarPlantilla( Integer.valueOf( this.selectedPlantilla ) ) );
 	}
+
 
 	
 	public void ordenaFEVI(ActionEvent e){
